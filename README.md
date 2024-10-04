@@ -1,0 +1,1 @@
+# Architektury-Softwareovych-Systemu
