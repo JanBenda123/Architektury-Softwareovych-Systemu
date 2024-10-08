@@ -1,1 +1,4 @@
 # Architektury-Softwareovych-Systemu
+
+
+[MIRO](https://miro.com/welcomeonboard/YVNqc2V4S01YQUxQT0Rib3dtbkgzQWNtUU9iRUhkS3VEM3BjYUc4STNRdkdwdmd2dm01OEVudE55VzV4bW51TXwzMDc0NDU3MzU1NDYxMTAwNzI1fDI=?share_link_id=478542708409)
