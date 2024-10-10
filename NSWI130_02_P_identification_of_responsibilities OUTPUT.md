@@ -3,7 +3,7 @@
 ## Core features and responsibilities
 
 <!-- A ### section for each feature -->
-### Feature: Exam terms management and room reservation
+### Feature: Správa podmínek zkoušky a rezervace místnosti
 
 <!-- The feature described in a form of a user story -->
 As a teacher...
@@ -23,7 +23,7 @@ As a teacher...
 
 <!-- Continue with ### sections for all other features. -->
 
-### Feature: Awarding credits
+### Feature: Udělování zápočtů
 
 <!-- The feature described in a form of a user story -->
 As a...
@@ -43,7 +43,7 @@ As a...
 
 <!-- Continue with ### sections for all other features. -->
 
-### Feature: Registering for the exam terms
+### Feature: Registrace na termíny zkoušky
 
 <!-- The feature described in a form of a user story -->
 As a...
@@ -63,7 +63,7 @@ As a...
 
 <!-- Continue with ### sections for all other features. -->
 
-### Feature: Viewering results
+### Feature: Zobrazení výsledků
 
 <!-- The feature described in a form of a user story -->
 As a...
@@ -83,7 +83,7 @@ As a...
 
 <!-- Continue with ### sections for all other features. -->
 
-### Feature: Awarding results
+### Feature: Udělování výsledků (známek)
 
 <!-- The feature described in a form of a user story -->
 As a...
@@ -103,7 +103,7 @@ As a...
 
 <!-- Continue with ### sections for all other features. -->
 
-### Feature: Communication / statistics / view all exam terms
+### Feature: Komunikace / statistika
 
 <!-- The feature described in a form of a user story -->
 As a...
