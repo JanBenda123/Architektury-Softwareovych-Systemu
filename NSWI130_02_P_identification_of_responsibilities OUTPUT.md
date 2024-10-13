@@ -88,27 +88,26 @@ As a...
 
 * nejaky bod
 
-<!-- Continue with ### sections for all other features. -->
-
 ### Feature: Zobrazení výsledků
 
-<!-- The feature described in a form of a user story -->
-As a...
+Jako student chci mít možnost podívat se na své výsledky z předmětů, které jsem si při studiu zapsal.
+Takto se dozvím, zda škole věnuji dostatečně času a jestli zvládám plnění svého studijního plánu.
 
 #### Feature breakdown
 
-<!-- The feature breakdown -->
-1. BLA BLA
+1. Student na dashboardu otevře modul výsledky zkoušek.
+2. Zobrazí se seznam výsledků zkoušek a zápočtů, které student skládal.
+3. V seznamu se student dozví jména jednotlivých předmětů, místa a časy konání, výsledky zkoušek, informace o udělení zápočtu a učitele, který zadal daný výsledek.
 
 #### Responsibilities
 
-<!-- A ##### section for each group of responsibilities -->
+##### Zobrazení skládaných zkoušek [2]
 
-##### Nejaka responsibillity
+* získat ze společné databáze informace o všech zkouškách, které daný student skládal.
 
-* nejaky bod
+##### Zobrazení získaných zápočtů [2]
 
-<!-- Continue with ### sections for all other features. -->
+* získat ze společné databáze informace o všech zápočtech, které daný student získal.
 
 ### Feature: Udělování výsledků (známek)
 
