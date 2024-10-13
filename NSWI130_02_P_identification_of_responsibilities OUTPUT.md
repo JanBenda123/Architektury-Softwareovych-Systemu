@@ -30,7 +30,6 @@ Při vytváření zkoušky potřebuji zarezervovat místnost konání, aby stude
 * získání seznamu předmětů, ze společné databáze celkového systému, na základě ID učitele
 * poskytnout učiteli možnost výběru
   
-
 ##### Responsibillity: Kontrola zadaných informací [5]
 
 * ověření správnosti formátu zadaných informací
@@ -39,6 +38,7 @@ Při vytváření zkoušky potřebuji zarezervovat místnost konání, aby stude
 * kontrola volné místnosti na základu zadané místnosti a termínu v databázi systému
   * v případě chyby informovat uživatele a poskytnout možnost výběru nového termínu
 * zajištění kolizí, pokud dva učitelé vypisují zkoušku najednou do stejné místnosti
+
 ##### Responsibillity: Zadání zkoušky do databáze [7]
 
 * systém ve správném formátu odešle do databáze záznam o vytvoření zkoušky
@@ -113,20 +113,42 @@ As a...
 ### Feature: Udělování výsledků (známek)
 
 <!-- The feature described in a form of a user story -->
-As a...
+Jako učitel potřebuju zobrazit a zapsat výsledky jednotlivých zkoušek, aby studenti mohli splnit předměty.
 
 #### Feature breakdown
 
 <!-- The feature breakdown -->
-1. BLA BLA
+1. Učitel na dashboardu vybere modul zkoušek
+2. Systém mu zobrazí všechny jeho předměty, které vyučuje
+3. Učitel zvolí předmět, pro který chce zapsat výsledky
+4. Učitel vybere konkrétní zkoušku
+5. Zobrazí se mu detaily zkoušky včetně tabulky s výsledky pro všechny zapsané studenty
+6. Kliknutím na tlačítko zapsat/upravit se umožní úpravy tabulky
+7. Kliknutím do příslušného pole tabulky ho může učitel vyplnit/upravit
+8. Změny uloží kliknutím na tlačítko uložit, do té doby se změny neaplikují
+9. (optional) Zaslání upozornění studentům, jejichž výsledky byly změněny
 
 #### Responsibilities
 
 <!-- A ##### section for each group of responsibilities -->
 
-##### Nejaka responsibillity
+##### Responsibillity: Zobrazení vyučovaných předmětů [2]
 
-* nejaky bod
+* získání seznamu předmětů, ze společné databáze celkového systému, na základě ID učitele
+* poskytnout učiteli možnost výběru
+
+##### Responsibillity: Zobrazení zkoušek pro daný předmět [4]
+
+* získání seznamu zkoušek, ze společné databáze celkového systému, na základě ID učitele a předmětu
+* poskytnout učiteli možnost výběru
+
+##### Responsibillity: Zadání zkoušky do databáze [8]
+
+* systém ve správném formátu odešle do databáze změny
+
+##### Responsibillity: Notifikace studentům [9]
+
+* každému studentovi, u kterého byl změněn výsledek se odešle email s detaily změny, obsahující například zkoušku, předmět, předchozí výsledek a nový výsledek
 
 <!-- Continue with ### sections for all other features. -->
 
@@ -149,4 +171,3 @@ As a...
 * nejaky bod
 
 <!-- Continue with ### sections for all other features. -->
-
