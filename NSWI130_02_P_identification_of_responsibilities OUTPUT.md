@@ -163,6 +163,9 @@ Jako učitel potřebuju zobrazit a zapsat výsledky jednotlivých zkoušek, aby 
 #### Responsibilities
 
 <!-- A ##### section for each group of responsibilities -->
+1. Kontrola pripojeni k internetu
+2. - 8. Pristup k databazi, vytvoreni cache, modelu z cache a jeho vizualizace. Synchronizace s databazi, kontrola persistence zmen v databazi.
+9. Napojeni API zprostredkovavajici odesilani emailu pomoci toolu 3 strany?
 
 ##### Responsibillity: Zobrazení vyučovaných předmětů [2]
 
