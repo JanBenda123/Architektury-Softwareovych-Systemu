@@ -53,22 +53,55 @@ Při vytváření zkoušky potřebuji zarezervovat místnost konání, aby stude
 ### Feature: Udělování zápočtů
 
 <!-- The feature described in a form of a user story -->
-As a...
+Jako učitel potřebuji možnost vybrat ze seznamu studenty a udělit nebo odebrat jim zápočet, aby studenti věděli, jestli mají splněnou tuto studijní povinnost.
 
 #### Feature breakdown
 
 <!-- The feature breakdown -->
-1. BLA BLA
+1. Učitel si otevře svůj dashboard a rozklikne si možnost zadávání výsledků
+2. Systém se zeptá, ke kterému ze svých předmětů chce učitel zadat výsledky
+3. Učitel vybere daný předmět a zobrazí se mu seznam studentů tohoto předmětu včetně údaje o tom, jestli mají zápočet
+4. Učitel zakliká na seznamu studentů ty, kterým chce udělit zápočet
+5. Učitel zmáčkne tlačítko, kterým může studentovi udělit zápočet nebo tlačítko, kterým ho může odebrat
+6. Systém zobrazí shrnutí změn a zeptá se na potvrzení, pokud již nějaký student zápočet má (nebo při odebírání nemá), zobrazí upozornění, že akci nelze provést
+7. Učitel potvrdí nebo odmítne změny
+8. V případě potvrzení se zápočet studentovi zaznamená do databáze
+9. Systém zobrazí potvrzení provedené akce
+10. Systém pošle studentovi do emailu notifikaci o provedené akci
+
 
 #### Responsibilities
 
 <!-- A ##### section for each group of responsibilities -->
 
-##### Nejaka responsibillity
+##### Responsibility: Zobrazení vyučovaných předmětů [2]
 
-* nejaky bod
+* získání seznamu předmětů, ze společné databáze celkového systému, na základě ID učitele
+* poskytnout učiteli možnost výběru
 
-<!-- Continue with ### sections for all other features. -->
+##### Responsibility: Zobrazení seznamu studentů zapsaných na předmět [3]
+
+* získání seznamu studentů, ze společné databáze celkového systému, na základě ID předmětu a učitele (v případě, že student není garantem předmětu, vidí pouze studenty ze svých rozvrhových lístků)
+* poskytnout učiteli možnost výběru studentů ze seznamu
+  
+##### Responsibillity: Kontrola zadaných informací [6]
+
+* ověření správnosti formátu zadaných informací
+  * v případě chyby informovat uživatele a poskytnout možnost opravy
+* ověření vyplnění všech údajů
+* kontrola volné místnosti na základu zadané místnosti a termínu v databázi systému
+  * v případě chyby informovat uživatele a poskytnout možnost výběru nového termínu
+* zajištění kolizí, pokud dva učitelé vypisují zkoušku najednou do stejné místnosti
+
+##### Responsibillity: Zadání zápočtu do databáze [8]
+
+* systém ve správném formátu odešle do databáze záznam o udělení nebo odebrání zápočtu
+
+##### Responsibillity: Notifikace studentům [10]
+
+* vygeneruje zprávu o udělení či odebrání zápočtu
+* mail se odešle pouze studentům, kterých se akce týká a mají povoleno zasílání zpráv
+
 
 ### Feature: Registrace na termíny zkoušky
 
