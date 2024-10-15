@@ -86,14 +86,13 @@ Jako učitel potřebuji možnost vybrat ze seznamu studenty a udělit nebo odebr
   
 ##### Responsibillity: Kontrola zadaných informací [6]
 
-* ověření správnosti formátu zadaných informací
-  * v případě chyby informovat uživatele a poskytnout možnost opravy
-* ověření vyplnění všech údajů
-* kontrola volné místnosti na základu zadané místnosti a termínu v databázi systému
-  * v případě chyby informovat uživatele a poskytnout možnost výběru nového termínu
-* zajištění kolizí, pokud dva učitelé vypisují zkoušku najednou do stejné místnosti
+* ověření, jestli daný student už má zápočet a jestli mu ho lze udělit
 
-##### Responsibillity: Zadání zápočtu do databáze [8]
+##### Responsibillity: Zobrazit shrnutí informací a případné chyby [6]
+
+* dialogové okno se shrnutím akce
+
+##### Responsibillity: Uložení zápočtu do databáze [8]
 
 * systém ve správném formátu odešle do databáze záznam o udělení nebo odebrání zápočtu
 
@@ -101,7 +100,6 @@ Jako učitel potřebuji možnost vybrat ze seznamu studenty a udělit nebo odebr
 
 * vygeneruje zprávu o udělení či odebrání zápočtu
 * mail se odešle pouze studentům, kterých se akce týká a mají povoleno zasílání zpráv
-
 
 ### Feature: Registrace na termíny zkoušky
 
