@@ -2,6 +2,27 @@
 
 ## Core features and responsibilities
 
+* Based on this document we created the table of responsibilities from which a dependency graph was produced.
+* During the creation of the table, some additional responsibilities were added for the system to resemble a
+  more cohesive conceptualization. Names of responsibilities were also slightly altered during the discussion in the group
+* Below is a mapping of the original responsibilities create during the first labs to the responsibilities listed in the table. Each mapped responsibility appears in the following format
+//
+//Example :  
+//##### Responsibillity: {name of responsibility} [line number of the feature]
+//  * tabulka: '{name of the correlated responsibility in the table}'
+  
+* here is a list of added responsibilities in the table that were not mapped to any responsibility listed in this file
+
+1. "Zobrazit upozornění na chybu při vypisování termínu"
+2. "Zobrazit potvrzení vypsaného termínu"
+3. "Editace detailu zkoušky"
+4. "Zobrazit rozhraní pro zápis na zkoušku"
+5. "Zobrazit potvrzení zápisu"
+6. "Rozhraní udělení zápočtu"
+7. "Rozhraní zapsání výsledků zkoušky"
+8. "Agregace výsledků"
+9. "Přiřazení studenta na termín v databázi"
+
 <!-- A ### section for each feature -->
 ### Feature: Vytvoření zkoušky, správa podmínek a rezervace místnosti
 
@@ -26,11 +47,13 @@ Při vytváření zkoušky potřebuji zarezervovat místnost konání, aby stude
 <!-- A ##### section for each group of responsibilities -->
 
 ##### Responsibillity: Zobrazení vyučovaných předmětů [2]
+* tabulka : 'Zobrazení učitelem vyučovaných předmětů'
 
 * získání seznamu předmětů, ze společné databáze celkového systému, na základě ID učitele
 * poskytnout učiteli možnost výběru
   
-##### Responsibillity: Kontrola zadaných informací [5]
+##### Responsibillity: Kontrola zadaných informací [5] 
+* tabulka: "Validace zadaných informací", "Kontrola podmínek zápisu", "Kontrola a rezervace volné místnosti"
 
 * ověření správnosti formátu zadaných informací
   * v případě chyby informovat uživatele a poskytnout možnost opravy
@@ -40,10 +63,20 @@ Při vytváření zkoušky potřebuji zarezervovat místnost konání, aby stude
 * zajištění kolizí, pokud dva učitelé vypisují zkoušku najednou do stejné místnosti
 
 ##### Responsibillity: Zadání zkoušky do databáze [7]
+* tabulka: "Vytvoření a editace termínu", "Uložení termínu do databáze", "Uložení změn termínu do databáze"
 
 * systém ve správném formátu odešle do databáze záznam o vytvoření zkoušky
 
 ##### Responsibillity: Notifikace studentům [8]
+* tabulka: "Sestavení notifikace studentům o termínu", "Sestavení notifikace studentům o zápočtu", "Odeslání notifikací"
+
+* vygeneruje zprávu o vytvoření zkoušky
+* mail se odešle pouze studentům, kteří jsou přihlášení na daném předmětu a mají povoleno zasílání zpráv
+
+<!-- Continue with ### sections for all other features. -->
+
+##### Responsibillity: Notifikace studentům [8]
+* tabulka: "Odeslání notifikací"
 
 * vygeneruje zprávu o vytvoření zkoušky
 * mail se odešle pouze studentům, kteří jsou přihlášení na daném předmětu a mají povoleno zasílání zpráv
@@ -51,6 +84,7 @@ Při vytváření zkoušky potřebuji zarezervovat místnost konání, aby stude
 <!-- Continue with ### sections for all other features. -->
 
 ### Feature: Udělování zápočtů
+
 
 <!-- The feature described in a form of a user story -->
 Jako učitel potřebuji možnost vybrat ze seznamu studenty a udělit nebo odebrat jim zápočet, aby studenti věděli, jestli mají splněnou tuto studijní povinnost.
@@ -75,6 +109,7 @@ Jako učitel potřebuji možnost vybrat ze seznamu studenty a udělit nebo odebr
 <!-- A ##### section for each group of responsibilities -->
 
 ##### Responsibility: Zobrazení vyučovaných předmětů [2]
+* tabulka: 'Zobrazit potvrzení vypsaného termínu'
 
 * získání seznamu předmětů, ze společné databáze celkového systému, na základě ID učitele
 * poskytnout učiteli možnost výběru
@@ -85,6 +120,7 @@ Jako učitel potřebuji možnost vybrat ze seznamu studenty a udělit nebo odebr
 * poskytnout učiteli možnost výběru studentů ze seznamu
   
 ##### Responsibillity: Kontrola zadaných informací [6]
+* tabulka: "Validace zadaných informací", "Kontrola podmínek zápisu"
 
 * ověření, jestli daný student už má zápočet a jestli mu ho lze udělit
 
@@ -93,31 +129,14 @@ Jako učitel potřebuji možnost vybrat ze seznamu studenty a udělit nebo odebr
 * dialogové okno se shrnutím akce
 
 ##### Responsibillity: Uložení zápočtu do databáze [8]
+* tabulka: "Udělení zápočtu", "Uložení zápočtů do databáze"
 
 * systém ve správném formátu odešle do databáze záznam o udělení nebo odebrání zápočtu
 
 ##### Responsibillity: Notifikace studentům [10]
-
+* tabulka: "Odeslání notifikací"
 * vygeneruje zprávu o udělení či odebrání zápočtu
 * mail se odešle pouze studentům, kterých se akce týká a mají povoleno zasílání zpráv
-
-### Feature: Registrace na termíny zkoušky
-
-<!-- The feature described in a form of a user story -->
-As a...
-
-#### Feature breakdown
-
-<!-- The feature breakdown -->
-1. BLA BLA
-
-#### Responsibilities
-
-<!-- A ##### section for each group of responsibilities -->
-
-##### Nejaka responsibillity
-
-* nejaky bod
 
 ### Feature: Zobrazení výsledků
 
@@ -133,10 +152,12 @@ Takto se dozvím, zda škole věnuji dostatečně času a jestli zvládám plně
 #### Responsibilities
 
 ##### Zobrazení skládaných zkoušek [2]
+* tabulka "Zobrazení výsledků studentů", "Zobrazení detailů zkoušky"
 
 * získat ze společné databáze informace o všech zkouškách, které daný student skládal.
 
-##### Zobrazení získaných zápočtů [2]
+##### Zobrazení získaných zápočtů [2]¨
+* tabulka: "Zobrazit své výsledky (napříč předměty)" 
 
 * získat ze společné databáze informace o všech zápočtech, které daný student získal.
 
@@ -161,6 +182,8 @@ Jako učitel potřebuju zobrazit a zapsat výsledky jednotlivých zkoušek, aby 
 #### Responsibilities
 
 <!-- A ##### section for each group of responsibilities -->
+##### Responsibillity: Databaze, Cache a přístup k API pro odesílnání emailů
+* tabulka: "Čtení termínů a jejich detailů", "Čtení výsledků z databáze", "Čtení a zápis statistik", "Uložení výsledků zkoušek"
 1. Kontrola pripojeni k internetu
 2. - 8. Pristup k databazi, vytvoreni cache, modelu z cache a jeho vizualizace. Synchronizace s databazi, kontrola persistence zmen v databazi.
 9. Napojeni API zprostredkovavajici odesilani emailu pomoci toolu 3 strany?
@@ -171,6 +194,7 @@ Jako učitel potřebuju zobrazit a zapsat výsledky jednotlivých zkoušek, aby 
 * poskytnout učiteli možnost výběru
 
 ##### Responsibillity: Zobrazení zkoušek pro daný předmět [4]
+* tabulka "Zobrazení zkoušek pro daný předmět", "Zobrazení zkoušek studenta"
 
 * získání seznamu zkoušek, ze společné databáze celkového systému, na základě ID učitele a předmětu
 * poskytnout učiteli možnost výběru
@@ -180,27 +204,7 @@ Jako učitel potřebuju zobrazit a zapsat výsledky jednotlivých zkoušek, aby 
 * systém ve správném formátu odešle do databáze změny
 
 ##### Responsibillity: Notifikace studentům [9]
+* tabulka: "Sestavení notifikace studentům o zápočtu", "Odeslání notifikací"
 
 * každému studentovi, u kterého byl změněn výsledek se odešle email s detaily změny, obsahující například zkoušku, předmět, předchozí výsledek a nový výsledek
 
-<!-- Continue with ### sections for all other features. -->
-
-### Feature: Komunikace / statistika
-
-<!-- The feature described in a form of a user story -->
-As a...
-
-#### Feature breakdown
-
-<!-- The feature breakdown -->
-1. BLA BLA
-
-#### Responsibilities
-
-<!-- A ##### section for each group of responsibilities -->
-
-##### Nejaka responsibillity
-
-* nejaky bod
-
-<!-- Continue with ### sections for all other features. -->
