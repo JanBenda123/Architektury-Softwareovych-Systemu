@@ -47,6 +47,30 @@ workspace "Examination System" "" {
         manager -> exams_web_app "Reads about teacher performance"
         student -> exams_web_app "Registers to exam terms and views exam results"
         teacher -> exams_web_app "Makes exam terms and sets exam results"
+
+        deploymentEnvironment "Live"    {
+            deploymentNode "User's web browser" "" ""    {
+                user_html_instance = containerInstance exams_web_app
+            }
+            deploymentNode "Application Server" "" "Ubuntu 18.04 LTS"   {
+                deploymentNode "Web server" "" "Apache Tomcat 10.1.15"  {
+                    term_app_instance = containerInstance term_manager
+                    result_app_instance = containerInstance result_manager
+                    stats_app_instance = containerInstance stats_manager
+                }
+            }
+            deploymentNode "Agregator Server" "" "Ubuntu 18.04 LTS"{
+                aggregator_app_instance = containerInstance aggregator
+            }
+            deploymentNode "Database Server" "" "Ubuntu 18.04 LTS"   {
+                deploymentNode "Relational DB server" "" "Oracle 19.1.0" {
+                    term_db_instance = containerInstance term_database
+                    stats_db_instance = containerInstance stats_database
+                    results_db_instance = containerInstance results_database
+                }
+        
+            }
+        }
     }
 
     views {
@@ -56,6 +80,10 @@ workspace "Examination System" "" {
         }
 
         container S "C2" {
+            include *
+        }
+
+        deployment S "Live" "Live_Deployment"   {
             include *
         }
 
