@@ -4,12 +4,22 @@ workspace "Examination System" "" {
             term_manager = container "Exam Terms Manager" "Manages exam terms."
             result_manager = container "Result Manager" "Manages course credits and exam results."
             aggregator = container "Result Aggregator" "Aggregates past results into statistics."
-            stats_manager = container "Exam Statistics Manager" "Manages result statistics."
+            stats_manager = container "Exam Statistics Manager" "Manages result statistics." {
+                group "API Layer" {
+                    stats_interface = component "Statistics Interface" "Translates API requests to bussiness logic calls."
+                }
+                group "Business Layer" {
+                    stats_controller = component "Statistics" "Encapsulates statistics info business logic."
+                }
+                group "Persistence Layer" {
+                    stats_repo = component "Statistics Repository" "Provides access to the underlying statistics database."
+                }
+            }    
             
             term_database = container "Exam Terms Database" "" "" "Database"
             results_database = container "Exam Results Database" "" "" "Database"
             stats_database = container "Exam Statistics Database" "" "" "Database"
-
+            
             exams_web_app = container "Exam Web App" "Displays data to the users and allows them to send requests." "" "Web Front-End"
         }
 
@@ -18,9 +28,14 @@ workspace "Examination System" "" {
         system_notifications = softwareSystem "Notification System" "Sends notifications to users." "Existing System"
         system_auth = softwareSystem "Auth" "Provides Authentication and Authorisation." "Existing System"
 
+        stats_interface -> system_auth "Assures user authenticity"
+        stats_interface -> stats_controller "Translates user requests"
+        stats_controller -> stats_repo "Provides statistical data"
+        stats_repo -> stats_database "Accesses statistical data"
+
         exams_web_app -> term_manager "Requests information and changes about exam terms"
         exams_web_app -> result_manager "Requests information and changes about exam results"
-        exams_web_app -> stats_manager "Requests information about exam results"
+        exams_web_app -> stats_interface "Requests statistics about exam results"
         exams_web_app -> system_auth "Delegates authentication and authorisation"
 
         term_manager -> term_database "Reads and writes exam terms"
@@ -80,6 +95,10 @@ workspace "Examination System" "" {
         }
 
         container S "C2" {
+            include *
+        }
+
+        component stats_manager "C3_statistics" {
             include *
         }
 
