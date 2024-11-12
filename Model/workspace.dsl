@@ -13,8 +13,8 @@ workspace "Examination System" "" {
                 group "Persistence Layer" {
                     stats_repo = component "Statistics Repository" "Provides access to the underlying statistics database."
                 }
-            }    
-            
+            }
+
             aggregator = container "Result Aggregator" "Aggregates past results into statistics." {
                 group "Presentation" {
                     aggregator_manager = component "Task Manager" "Starts the task and provides the parameters of the task. (Command line interface)"
@@ -29,7 +29,7 @@ workspace "Examination System" "" {
             term_database = container "Exam Terms Database" "" "" "Database"
             results_database = container "Exam Results Database" "" "" "Database"
             stats_database = container "Exam Statistics Database" "" "" "Database"
-            
+
             exams_web_app = container "Exam Web App" "Displays data to the users and allows them to send requests." "" "Web Front-End"
         }
 
@@ -65,9 +65,6 @@ workspace "Examination System" "" {
         aggregator_consumer -> stats_database "Writes aggregated statistics"
         aggregator_producer -> aggregator_transformer "Passes data"
         aggregator_transformer -> aggregator_consumer "Passes data"
-
-        stats_manager -> stats_database "Reads statistics"
-        stats_manager -> system_auth "Delegates authentication and authorisation"
 
         manager = person "Manager"
         student = person "Student"
