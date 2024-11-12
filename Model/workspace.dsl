@@ -60,6 +60,15 @@ workspace "Examination System" "" {
             stats_database = container "Exam Statistics Database" "" "" "Database"
 
             exams_web_app = container "Exam Web App" "Displays data to the users and allows them to send requests." "" "Web Front-End"
+
+
+            selenium_test = container "Selenium Tests" "Navigation flow & UI Elements"
+            junit_test = container "JUnit Tests" "Unit tests"
+            apache_jmeter_test = container "Apache Jmeter Tests" "Load Testing"
+            toad_oracle = container "Toad For Oracle" "Functional testing for database"
+            oracle_enterprise_manager = container "Oracle Enterprise Manager" "Performance testing"
+            oracle_sql_developer = container "Oracle SQL Developer" "Security Testing"
+            oracle_rman = container "Oracle Rman" "Backup Testing"
         }
 
         system_schedules = softwareSystem "Schedules System" "Allows users to view and manage schedules." "Existing System"
@@ -126,6 +135,31 @@ workspace "Examination System" "" {
 
         term_controller -> result_interface "Queries for required credits"
 
+        # Testing relations
+        exams_web_app -> selenium_test "Tests UI"
+        exams_web_app -> apache_jmeter_test "Load testing"
+
+        term_manager -> junit_test "Unit tests for Java"
+        result_manager -> junit_test "Unit tests for Java"
+        stats_manager -> junit_test "Unit tests for Java"
+        aggregator -> junit_test "Unit tests for Java"
+
+        term_database -> oracle_enterprise_manager "Performance testing"
+        stats_database -> oracle_enterprise_manager "Performance testing"
+        results_database -> oracle_enterprise_manager "Performance testing"
+
+        term_database -> oracle_sql_developer "Security testing"
+        stats_database -> oracle_sql_developer "Security testing"
+        results_database -> oracle_sql_developer "Security testing"
+
+        term_database -> oracle_rman "Backup testing"
+        stats_database -> oracle_rman "Backup testing"
+        results_database -> oracle_rman "Backup testing"
+
+        term_database -> toad_oracle "functional testing"
+        stats_database -> toad_oracle "functional testing"
+        results_database -> toad_oracle "functional testing"
+
         deploymentEnvironment "Live"    {
             deploymentNode "User's web browser" "" ""    {
                 user_html_instance = containerInstance exams_web_app
@@ -149,6 +183,44 @@ workspace "Examination System" "" {
 
             }
         }
+
+        deploymentEnvironment "Tests"    {
+            deploymentNode "User's web browser" "" ""    {
+                test_user_html_instance = containerInstance exams_web_app
+                deploymentNode "Nav. Flow & UI Elements Tests" "" "Selenium WebDriver"{
+                    selenium_test_instance = containerInstance selenium_test
+                    apache_jmeter_test_instance = containerInstance apache_jmeter_test
+                }
+            } 
+            deploymentNode "Application Server" "" "Ubuntu 18.04 LTS"   {
+                deploymentNode "Web server" "" "Apache Tomcat 10.1.15"  {
+                    test_term_app_instance = containerInstance term_manager
+                    test_result_app_instance = containerInstance result_manager
+                    test_stats_app_instance = containerInstance stats_manager
+                    deploymentNode "Unit tests" "JUnit" {
+                        webserver_junit_test_instance = containerInstance junit_test
+                    }
+                }
+            }
+            deploymentNode "Agregator Server" "" "Ubuntu 18.04 LTS"{
+                test_aggregator_app_instance = containerInstance aggregator
+            }
+            deploymentNode "Database Server" "" "Ubuntu 18.04 LTS"   {
+                deploymentNode "Relational DB server" "" "Oracle 19.1.0" {
+                    test_term_db_instance = containerInstance term_database
+                    test_stats_db_instance = containerInstance stats_database
+                    test_results_db_instance = containerInstance results_database
+                }
+                deploymentNode "Database Tests" "Oracle & Toad" {
+                        oem_test_instance = containerInstance oracle_enterprise_manager
+                        osd_test_instance = containerInstance oracle_sql_developer
+                        orm_test_instance = containerInstance oracle_rman
+                        toad_test_instance = containerInstance toad_oracle
+                    }
+
+            }
+        }        
+
     }
 
     views {
@@ -216,6 +288,23 @@ workspace "Examination System" "" {
 
         deployment S "Live" "Live_Deployment"   {
             include *
+        }
+
+        deployment S "Tests" "Development_Deployment"   {
+            include *
+            exclude "exams_web_app -> term_manager"
+            exclude "exams_web_app -> result_manager"
+            exclude "exams_web_app -> stats_manager"
+
+            exclude "term_manager -> term_database"
+            exclude "result_manager -> results_database"
+            exclude "stats_manager -> stats_database"
+
+            exclude "aggregator -> stats_database"
+            
+            exclude "aggregator -> results_database" 
+            exclude "term_manager -> result_manager"   
+    
         }
 
         theme default
