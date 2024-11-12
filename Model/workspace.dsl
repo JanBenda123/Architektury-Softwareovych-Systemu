@@ -1,7 +1,19 @@
 workspace "Examination System" "" {
     model {
         S = softwareSystem "Examination System" "Allows users to view and manage exam terms and results and enroll into exam terms. Also provides statistics to managers." {
-            term_manager = container "Exam Terms Manager" "Manages exam terms."
+            term_manager = container "Exam Terms Manager" "Manages exam terms."{
+                group "API Layer" {
+                    term_interface = component "Exam Terms Interface" "Translates API requests to business logic calls."
+                }
+                group "Business Layer" {
+                    term_controller = component "Exam Terms Controller" "Encapsulates exam term management business logic."
+                    term_scheduler = component "Exam Scheduler" "Handles scheduling of exam terms and coordinates with the Schedules System."
+                    term_notifier = component "Notification Coordinator" "Requests notifications to be sent for exam term updates."
+                }
+                group "Persistence Layer" {
+                    term_repo = component "Exam Terms Repository" "Provides access to the underlying exam terms database."
+                }
+            }
             result_manager = container "Result Manager" "Manages course credits and exam results."
             stats_manager = container "Exam Statistics Manager" "Manages result statistics." {
                 group "API Layer" {
@@ -46,6 +58,7 @@ workspace "Examination System" "" {
         exams_web_app -> term_manager "Requests information and changes about exam terms"
         exams_web_app -> result_manager "Requests information and changes about exam results"
         exams_web_app -> stats_interface "Requests statistics about exam results"
+        exams_web_app -> term_interface "Requests information and interactive possibilities"
         exams_web_app -> system_auth "Delegates authentication and authorisation"
 
         term_manager -> term_database "Reads and writes exam terms"
@@ -73,6 +86,16 @@ workspace "Examination System" "" {
         manager -> exams_web_app "Reads about teacher performance"
         student -> exams_web_app "Registers to exam terms and views exam results"
         teacher -> exams_web_app "Makes exam terms and sets exam results"
+
+        # Exam term manager
+        term_interface -> term_controller "Translates user requests for term management"
+        term_controller -> term_repo "Reads and writes term data"
+        term_repo -> term_database "Accesses exam term data"
+        term_controller -> term_scheduler "Coordinates for room reservations"
+        term_scheduler -> system_schedules "Asks for room reservations"
+        term_controller -> term_notifier "Requests notifications"
+        term_notifier -> system_notifications "Sends notifications about term updates"
+        term_interface -> system_auth "Assures user authenticity"
 
         deploymentEnvironment "Live"    {
             deploymentNode "User's web browser" "" ""    {
@@ -115,6 +138,11 @@ workspace "Examination System" "" {
 
         component aggregator "C3_Aggregator" {
             include *
+        }
+
+        component term_manager "C3_ExamTermManager"{
+            include *
+            autolayout lr
         }
 
         deployment S "Live" "Live_Deployment"   {
