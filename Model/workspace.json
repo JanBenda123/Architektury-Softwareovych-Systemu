@@ -3,45 +3,45 @@
   "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-ui",
-  "lastModifiedDate" : "2024-11-12T09:44:02Z",
+  "lastModifiedDate" : "2024-11-12T10:47:55Z",
   "model" : {
     "deploymentNodes" : [ {
       "containerInstances" : [ {
-        "containerId" : "16",
+        "containerId" : "21",
         "deploymentGroups" : [ "Default" ],
         "environment" : "Live",
-        "id" : "65",
+        "id" : "77",
         "instanceId" : 1,
         "properties" : {
           "structurizr.dsl.identifier" : "user_html_instance"
         },
         "relationships" : [ {
           "description" : "Requests information and changes about exam terms",
-          "destinationId" : "68",
-          "id" : "69",
-          "linkedRelationshipId" : "28",
-          "sourceId" : "65"
+          "destinationId" : "80",
+          "id" : "81",
+          "linkedRelationshipId" : "33",
+          "sourceId" : "77"
         }, {
           "description" : "Requests information and changes about exam results",
-          "destinationId" : "70",
-          "id" : "71",
-          "linkedRelationshipId" : "29",
-          "sourceId" : "65"
+          "destinationId" : "82",
+          "id" : "83",
+          "linkedRelationshipId" : "34",
+          "sourceId" : "77"
         }, {
           "description" : "Requests statistics about exam results",
-          "destinationId" : "72",
-          "id" : "73",
-          "linkedRelationshipId" : "31",
-          "sourceId" : "65"
+          "destinationId" : "84",
+          "id" : "85",
+          "linkedRelationshipId" : "36",
+          "sourceId" : "77"
         } ],
         "tags" : "Container Instance"
       } ],
       "environment" : "Live",
-      "id" : "64",
+      "id" : "76",
       "instances" : "1",
       "name" : "User's web browser",
       "properties" : {
-        "structurizr.dsl.identifier" : "92b8d23b-3742-4a55-b079-fd59378214e7"
+        "structurizr.dsl.identifier" : "f19f6d76-d9a3-4764-b4c8-edff74b09fdc"
       },
       "tags" : "Element,Deployment Node"
     }, {
@@ -50,140 +50,134 @@
           "containerId" : "2",
           "deploymentGroups" : [ "Default" ],
           "environment" : "Live",
-          "id" : "68",
+          "id" : "80",
           "instanceId" : 1,
           "properties" : {
             "structurizr.dsl.identifier" : "term_app_instance"
           },
           "relationships" : [ {
             "description" : "Reads and writes exam terms",
-            "destinationId" : "78",
-            "id" : "79",
-            "linkedRelationshipId" : "33",
-            "sourceId" : "68"
+            "destinationId" : "90",
+            "id" : "91",
+            "linkedRelationshipId" : "39",
+            "sourceId" : "80"
           } ],
           "tags" : "Container Instance"
         }, {
-          "containerId" : "3",
+          "containerId" : "8",
           "deploymentGroups" : [ "Default" ],
           "environment" : "Live",
-          "id" : "70",
+          "id" : "82",
           "instanceId" : 1,
           "properties" : {
             "structurizr.dsl.identifier" : "result_app_instance"
           },
           "relationships" : [ {
             "description" : "Reads and writes exam results",
-            "destinationId" : "84",
-            "id" : "85",
-            "linkedRelationshipId" : "41",
-            "sourceId" : "70"
+            "destinationId" : "95",
+            "id" : "97",
+            "linkedRelationshipId" : "47",
+            "sourceId" : "82"
           } ],
           "tags" : "Container Instance"
         }, {
-          "containerId" : "4",
+          "containerId" : "9",
           "deploymentGroups" : [ "Default" ],
           "environment" : "Live",
-          "id" : "72",
+          "id" : "84",
           "instanceId" : 1,
           "properties" : {
             "structurizr.dsl.identifier" : "stats_app_instance"
           },
           "relationships" : [ {
             "description" : "Accesses statistical data",
-            "destinationId" : "80",
-            "id" : "81",
-            "linkedRelationshipId" : "27",
-            "sourceId" : "72"
-          }, {
-            "description" : "Reads statistics",
-            "destinationId" : "80",
-            "id" : "82",
-            "linkedRelationshipId" : "53",
-            "sourceId" : "72"
+            "destinationId" : "92",
+            "id" : "94",
+            "linkedRelationshipId" : "32",
+            "sourceId" : "84"
           } ],
           "tags" : "Container Instance"
         } ],
         "environment" : "Live",
-        "id" : "67",
+        "id" : "79",
         "instances" : "1",
         "name" : "Web server",
         "properties" : {
-          "structurizr.dsl.identifier" : "2c05d03c-c147-4a7e-ba47-26dae2fb65e1"
+          "structurizr.dsl.identifier" : "b46fceb3-6f4e-4617-aeac-d451f6245532"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Apache Tomcat 10.1.15"
       } ],
       "environment" : "Live",
-      "id" : "66",
+      "id" : "78",
       "instances" : "1",
       "name" : "Application Server",
       "properties" : {
-        "structurizr.dsl.identifier" : "2dd1d6a5-7c29-45cf-8d9c-f65e391a7655"
+        "structurizr.dsl.identifier" : "712e4c14-7e61-4ab9-b625-44cbbae0ff40"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Ubuntu 18.04 LTS"
     }, {
       "containerInstances" : [ {
-        "containerId" : "8",
+        "containerId" : "13",
         "deploymentGroups" : [ "Default" ],
         "environment" : "Live",
-        "id" : "75",
+        "id" : "87",
         "instanceId" : 1,
         "properties" : {
           "structurizr.dsl.identifier" : "aggregator_app_instance"
         },
         "relationships" : [ {
           "description" : "Writes aggregated statistics",
-          "destinationId" : "80",
-          "id" : "83",
-          "linkedRelationshipId" : "50",
-          "sourceId" : "75"
+          "destinationId" : "92",
+          "id" : "93",
+          "linkedRelationshipId" : "56",
+          "sourceId" : "87"
         }, {
           "description" : "Reads historic results",
-          "destinationId" : "84",
-          "id" : "86",
-          "linkedRelationshipId" : "47",
-          "sourceId" : "75"
+          "destinationId" : "95",
+          "id" : "96",
+          "linkedRelationshipId" : "53",
+          "sourceId" : "87"
         } ],
         "tags" : "Container Instance"
       } ],
       "environment" : "Live",
-      "id" : "74",
+      "id" : "86",
       "instances" : "1",
       "name" : "Agregator Server",
       "properties" : {
-        "structurizr.dsl.identifier" : "71b19d9c-572c-453c-8cf1-58cf8f16e587"
+        "structurizr.dsl.identifier" : "e8ae8b21-73b5-49ce-9cee-70a51cba062b"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Ubuntu 18.04 LTS"
     }, {
       "children" : [ {
         "containerInstances" : [ {
-          "containerId" : "13",
+          "containerId" : "18",
           "deploymentGroups" : [ "Default" ],
           "environment" : "Live",
-          "id" : "78",
+          "id" : "90",
           "instanceId" : 1,
           "properties" : {
             "structurizr.dsl.identifier" : "term_db_instance"
           },
           "tags" : "Container Instance"
         }, {
-          "containerId" : "15",
+          "containerId" : "20",
           "deploymentGroups" : [ "Default" ],
           "environment" : "Live",
-          "id" : "80",
+          "id" : "92",
           "instanceId" : 1,
           "properties" : {
             "structurizr.dsl.identifier" : "stats_db_instance"
           },
           "tags" : "Container Instance"
         }, {
-          "containerId" : "14",
+          "containerId" : "19",
           "deploymentGroups" : [ "Default" ],
           "environment" : "Live",
-          "id" : "84",
+          "id" : "95",
           "instanceId" : 1,
           "properties" : {
             "structurizr.dsl.identifier" : "results_db_instance"
@@ -191,27 +185,27 @@
           "tags" : "Container Instance"
         } ],
         "environment" : "Live",
-        "id" : "77",
+        "id" : "89",
         "instances" : "1",
         "name" : "Relational DB server",
         "properties" : {
-          "structurizr.dsl.identifier" : "1748e73d-27a0-49c8-ac93-19b1c2a98341"
+          "structurizr.dsl.identifier" : "88c02f78-db00-489a-83f9-f951eefa93e5"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Oracle 19.1.0"
       } ],
       "environment" : "Live",
-      "id" : "76",
+      "id" : "88",
       "instances" : "1",
       "name" : "Database Server",
       "properties" : {
-        "structurizr.dsl.identifier" : "fb177624-e718-436e-a2f9-b7c335579caf"
+        "structurizr.dsl.identifier" : "8ecc80be-1873-4de5-a0cb-7c21c49e7e73"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Ubuntu 18.04 LTS"
     } ],
     "people" : [ {
-      "id" : "55",
+      "id" : "59",
       "location" : "Unspecified",
       "name" : "Manager",
       "properties" : {
@@ -219,23 +213,20 @@
       },
       "relationships" : [ {
         "description" : "Reads about teacher performance",
-        "destinationId" : "16",
-        "id" : "58",
-        "properties" : {
-          "structurizr.dsl.identifier" : "e0f00aff-caef-47b5-933d-ceb5d0c5f5d3"
-        },
-        "sourceId" : "55",
+        "destinationId" : "21",
+        "id" : "62",
+        "sourceId" : "59",
         "tags" : "Relationship"
       }, {
         "description" : "Reads about teacher performance",
         "destinationId" : "1",
-        "id" : "59",
-        "linkedRelationshipId" : "58",
-        "sourceId" : "55"
+        "id" : "63",
+        "linkedRelationshipId" : "62",
+        "sourceId" : "59"
       } ],
       "tags" : "Element,Person"
     }, {
-      "id" : "56",
+      "id" : "60",
       "location" : "Unspecified",
       "name" : "Student",
       "properties" : {
@@ -243,23 +234,20 @@
       },
       "relationships" : [ {
         "description" : "Registers to exam terms and views exam results",
-        "destinationId" : "16",
-        "id" : "60",
-        "properties" : {
-          "structurizr.dsl.identifier" : "a71244e7-5c4a-4db3-9d3e-dd3a81d1413e"
-        },
-        "sourceId" : "56",
+        "destinationId" : "21",
+        "id" : "64",
+        "sourceId" : "60",
         "tags" : "Relationship"
       }, {
         "description" : "Registers to exam terms and views exam results",
         "destinationId" : "1",
-        "id" : "61",
-        "linkedRelationshipId" : "60",
-        "sourceId" : "56"
+        "id" : "65",
+        "linkedRelationshipId" : "64",
+        "sourceId" : "60"
       } ],
       "tags" : "Element,Person"
     }, {
-      "id" : "57",
+      "id" : "61",
       "location" : "Unspecified",
       "name" : "Teacher",
       "properties" : {
@@ -267,24 +255,125 @@
       },
       "relationships" : [ {
         "description" : "Makes exam terms and sets exam results",
-        "destinationId" : "16",
-        "id" : "62",
-        "properties" : {
-          "structurizr.dsl.identifier" : "9bf230f9-7bd9-4b02-a596-d8baf7503b0d"
-        },
-        "sourceId" : "57",
+        "destinationId" : "21",
+        "id" : "66",
+        "sourceId" : "61",
         "tags" : "Relationship"
       }, {
         "description" : "Makes exam terms and sets exam results",
         "destinationId" : "1",
-        "id" : "63",
-        "linkedRelationshipId" : "62",
-        "sourceId" : "57"
+        "id" : "67",
+        "linkedRelationshipId" : "66",
+        "sourceId" : "61"
       } ],
       "tags" : "Element,Person"
     } ],
     "softwareSystems" : [ {
       "containers" : [ {
+        "components" : [ {
+          "description" : "Translates API requests to business logic calls.",
+          "documentation" : { },
+          "group" : "API Layer",
+          "id" : "3",
+          "name" : "Exam Terms Interface",
+          "properties" : {
+            "structurizr.dsl.identifier" : "term_interface"
+          },
+          "relationships" : [ {
+            "description" : "Translates user requests for term management",
+            "destinationId" : "4",
+            "id" : "68",
+            "sourceId" : "3",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Assures user authenticity",
+            "destinationId" : "25",
+            "id" : "75",
+            "sourceId" : "3",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Encapsulates exam term management business logic.",
+          "documentation" : { },
+          "group" : "Business Layer",
+          "id" : "4",
+          "name" : "Exam Terms Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "term_controller"
+          },
+          "relationships" : [ {
+            "description" : "Reads and writes term data",
+            "destinationId" : "7",
+            "id" : "69",
+            "sourceId" : "4",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Coordinates for room reservations",
+            "destinationId" : "5",
+            "id" : "71",
+            "sourceId" : "4",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Requests notifications",
+            "destinationId" : "6",
+            "id" : "73",
+            "sourceId" : "4",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Handles scheduling of exam terms and coordinates with the Schedules System.",
+          "documentation" : { },
+          "group" : "Business Layer",
+          "id" : "5",
+          "name" : "Exam Scheduler",
+          "properties" : {
+            "structurizr.dsl.identifier" : "term_scheduler"
+          },
+          "relationships" : [ {
+            "description" : "Asks for room reservations",
+            "destinationId" : "22",
+            "id" : "72",
+            "sourceId" : "5",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Requests notifications to be sent for exam term updates.",
+          "documentation" : { },
+          "group" : "Business Layer",
+          "id" : "6",
+          "name" : "Notification Coordinator",
+          "properties" : {
+            "structurizr.dsl.identifier" : "term_notifier"
+          },
+          "relationships" : [ {
+            "description" : "Sends notifications about term updates",
+            "destinationId" : "24",
+            "id" : "74",
+            "sourceId" : "6",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Provides access to the underlying exam terms database.",
+          "documentation" : { },
+          "group" : "Persistence Layer",
+          "id" : "7",
+          "name" : "Exam Terms Repository",
+          "properties" : {
+            "structurizr.dsl.identifier" : "term_repo"
+          },
+          "relationships" : [ {
+            "description" : "Accesses exam term data",
+            "destinationId" : "18",
+            "id" : "70",
+            "sourceId" : "7",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
         "description" : "Manages exam terms.",
         "documentation" : { },
         "id" : "2",
@@ -294,47 +383,32 @@
         },
         "relationships" : [ {
           "description" : "Reads and writes exam terms",
-          "destinationId" : "13",
-          "id" : "33",
-          "properties" : {
-            "structurizr.dsl.identifier" : "1f5496ab-57c4-4190-a766-64265a20150f"
-          },
+          "destinationId" : "18",
+          "id" : "39",
           "sourceId" : "2",
           "tags" : "Relationship"
         }, {
           "description" : "Asks for room reservations",
-          "destinationId" : "17",
-          "id" : "34",
-          "properties" : {
-            "structurizr.dsl.identifier" : "1fa52d08-c50b-4791-8382-f3ff7aeaceee"
-          },
+          "destinationId" : "22",
+          "id" : "40",
           "sourceId" : "2",
           "tags" : "Relationship"
         }, {
           "description" : "Reads which students are enrolled into which courses",
-          "destinationId" : "18",
-          "id" : "36",
-          "properties" : {
-            "structurizr.dsl.identifier" : "8eafccee-9f55-42c0-a724-c1094c995a72"
-          },
+          "destinationId" : "23",
+          "id" : "42",
           "sourceId" : "2",
           "tags" : "Relationship"
         }, {
           "description" : "Requests to send notifications",
-          "destinationId" : "19",
-          "id" : "38",
-          "properties" : {
-            "structurizr.dsl.identifier" : "28e0f03a-1ccf-4feb-a400-535755912ad9"
-          },
+          "destinationId" : "24",
+          "id" : "44",
           "sourceId" : "2",
           "tags" : "Relationship"
         }, {
           "description" : "Delegates authentication and authorisation",
-          "destinationId" : "20",
-          "id" : "40",
-          "properties" : {
-            "structurizr.dsl.identifier" : "16c806b8-3c17-4f84-9ed5-6dd68ce0df1a"
-          },
+          "destinationId" : "25",
+          "id" : "46",
           "sourceId" : "2",
           "tags" : "Relationship"
         } ],
@@ -342,46 +416,34 @@
       }, {
         "description" : "Manages course credits and exam results.",
         "documentation" : { },
-        "id" : "3",
+        "id" : "8",
         "name" : "Result Manager",
         "properties" : {
           "structurizr.dsl.identifier" : "result_manager"
         },
         "relationships" : [ {
           "description" : "Reads and writes exam results",
-          "destinationId" : "14",
-          "id" : "41",
-          "properties" : {
-            "structurizr.dsl.identifier" : "ddc719a5-0304-41de-adf8-7d2efd2f1132"
-          },
-          "sourceId" : "3",
+          "destinationId" : "19",
+          "id" : "47",
+          "sourceId" : "8",
           "tags" : "Relationship"
         }, {
           "description" : "Reads which students are enrolled into which courses",
-          "destinationId" : "18",
-          "id" : "42",
-          "properties" : {
-            "structurizr.dsl.identifier" : "88451abe-92c4-47ba-b889-d7432c735535"
-          },
-          "sourceId" : "3",
+          "destinationId" : "23",
+          "id" : "48",
+          "sourceId" : "8",
           "tags" : "Relationship"
         }, {
           "description" : "Requests to send notifications",
-          "destinationId" : "19",
-          "id" : "43",
-          "properties" : {
-            "structurizr.dsl.identifier" : "cd22f783-79c2-47f5-8665-e433e6ff719a"
-          },
-          "sourceId" : "3",
+          "destinationId" : "24",
+          "id" : "49",
+          "sourceId" : "8",
           "tags" : "Relationship"
         }, {
           "description" : "Delegates authentication and authorisation",
-          "destinationId" : "20",
-          "id" : "44",
-          "properties" : {
-            "structurizr.dsl.identifier" : "7703170e-edff-43ae-988a-0f39616f891b"
-          },
-          "sourceId" : "3",
+          "destinationId" : "25",
+          "id" : "50",
+          "sourceId" : "8",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container"
@@ -390,28 +452,22 @@
           "description" : "Translates API requests to bussiness logic calls.",
           "documentation" : { },
           "group" : "API Layer",
-          "id" : "5",
+          "id" : "10",
           "name" : "Statistics Interface",
           "properties" : {
             "structurizr.dsl.identifier" : "stats_interface"
           },
           "relationships" : [ {
             "description" : "Assures user authenticity",
-            "destinationId" : "20",
-            "id" : "21",
-            "properties" : {
-              "structurizr.dsl.identifier" : "1dfcf59d-f738-4825-ab7b-e6fe957f58ed"
-            },
-            "sourceId" : "5",
+            "destinationId" : "25",
+            "id" : "26",
+            "sourceId" : "10",
             "tags" : "Relationship"
           }, {
             "description" : "Translates user requests",
-            "destinationId" : "6",
-            "id" : "24",
-            "properties" : {
-              "structurizr.dsl.identifier" : "2215fdfe-f6d9-4501-b0cb-da58eaa6ad4f"
-            },
-            "sourceId" : "5",
+            "destinationId" : "11",
+            "id" : "29",
+            "sourceId" : "10",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -419,19 +475,16 @@
           "description" : "Encapsulates statistics info business logic.",
           "documentation" : { },
           "group" : "Business Layer",
-          "id" : "6",
+          "id" : "11",
           "name" : "Statistics",
           "properties" : {
             "structurizr.dsl.identifier" : "stats_controller"
           },
           "relationships" : [ {
             "description" : "Provides statistical data",
-            "destinationId" : "7",
-            "id" : "25",
-            "properties" : {
-              "structurizr.dsl.identifier" : "ad56b693-012d-4371-84dd-ac71056e76fa"
-            },
-            "sourceId" : "6",
+            "destinationId" : "12",
+            "id" : "30",
+            "sourceId" : "11",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -439,60 +492,39 @@
           "description" : "Provides access to the underlying statistics database.",
           "documentation" : { },
           "group" : "Persistence Layer",
-          "id" : "7",
+          "id" : "12",
           "name" : "Statistics Repository",
           "properties" : {
             "structurizr.dsl.identifier" : "stats_repo"
           },
           "relationships" : [ {
             "description" : "Accesses statistical data",
-            "destinationId" : "15",
-            "id" : "26",
-            "properties" : {
-              "structurizr.dsl.identifier" : "7f16c700-73a0-405e-a0ca-1bb813be1b7d"
-            },
-            "sourceId" : "7",
+            "destinationId" : "20",
+            "id" : "31",
+            "sourceId" : "12",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         } ],
         "description" : "Manages result statistics.",
         "documentation" : { },
-        "id" : "4",
+        "id" : "9",
         "name" : "Exam Statistics Manager",
         "properties" : {
           "structurizr.dsl.identifier" : "stats_manager"
         },
         "relationships" : [ {
           "description" : "Assures user authenticity",
-          "destinationId" : "20",
-          "id" : "22",
-          "linkedRelationshipId" : "21",
-          "sourceId" : "4"
-        }, {
-          "description" : "Accesses statistical data",
-          "destinationId" : "15",
+          "destinationId" : "25",
           "id" : "27",
           "linkedRelationshipId" : "26",
-          "sourceId" : "4"
+          "sourceId" : "9"
         }, {
-          "description" : "Reads statistics",
-          "destinationId" : "15",
-          "id" : "53",
-          "properties" : {
-            "structurizr.dsl.identifier" : "b5178e3f-d684-43ea-8871-52b58f89a7f9"
-          },
-          "sourceId" : "4",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Delegates authentication and authorisation",
+          "description" : "Accesses statistical data",
           "destinationId" : "20",
-          "id" : "54",
-          "properties" : {
-            "structurizr.dsl.identifier" : "a137d724-eea3-4857-8c91-9940d75cb774"
-          },
-          "sourceId" : "4",
-          "tags" : "Relationship"
+          "id" : "32",
+          "linkedRelationshipId" : "31",
+          "sourceId" : "9"
         } ],
         "tags" : "Element,Container"
       }, {
@@ -500,19 +532,16 @@
           "description" : "Starts the task and provides the parameters of the task. (Command line interface)",
           "documentation" : { },
           "group" : "Presentation",
-          "id" : "9",
+          "id" : "14",
           "name" : "Task Manager",
           "properties" : {
             "structurizr.dsl.identifier" : "aggregator_manager"
           },
           "relationships" : [ {
             "description" : "Starts task with selected parameters",
-            "destinationId" : "10",
-            "id" : "45",
-            "properties" : {
-              "structurizr.dsl.identifier" : "d9420eb7-2a83-40dc-a172-4b4c66e5b08a"
-            },
-            "sourceId" : "9",
+            "destinationId" : "15",
+            "id" : "51",
+            "sourceId" : "14",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -520,28 +549,22 @@
           "description" : "Reads historic results for the task and creates a stream.",
           "documentation" : { },
           "group" : "Pipeline",
-          "id" : "10",
+          "id" : "15",
           "name" : "Result Reader",
           "properties" : {
             "structurizr.dsl.identifier" : "aggregator_producer"
           },
           "relationships" : [ {
             "description" : "Reads historic results",
-            "destinationId" : "14",
-            "id" : "46",
-            "properties" : {
-              "structurizr.dsl.identifier" : "33103df3-3f3b-429a-a8a3-dc971b18ed59"
-            },
-            "sourceId" : "10",
+            "destinationId" : "19",
+            "id" : "52",
+            "sourceId" : "15",
             "tags" : "Relationship"
           }, {
             "description" : "Passes data",
-            "destinationId" : "11",
-            "id" : "51",
-            "properties" : {
-              "structurizr.dsl.identifier" : "32a86d1b-e815-4959-9174-d88a29cc0c77"
-            },
-            "sourceId" : "10",
+            "destinationId" : "16",
+            "id" : "57",
+            "sourceId" : "15",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -549,28 +572,22 @@
           "description" : "Aggregates results into statistics based on the settings.",
           "documentation" : { },
           "group" : "Pipeline",
-          "id" : "11",
+          "id" : "16",
           "name" : "Aggregator",
           "properties" : {
             "structurizr.dsl.identifier" : "aggregator_transformer"
           },
           "relationships" : [ {
             "description" : "Reads aggregation rules",
-            "destinationId" : "9",
-            "id" : "48",
-            "properties" : {
-              "structurizr.dsl.identifier" : "03fe91f1-6632-44c5-8cd8-dfd3b999585d"
-            },
-            "sourceId" : "11",
+            "destinationId" : "14",
+            "id" : "54",
+            "sourceId" : "16",
             "tags" : "Relationship"
           }, {
             "description" : "Passes data",
-            "destinationId" : "12",
-            "id" : "52",
-            "properties" : {
-              "structurizr.dsl.identifier" : "603a5846-f1ef-49eb-81f3-6bdf0e9523b8"
-            },
-            "sourceId" : "11",
+            "destinationId" : "17",
+            "id" : "58",
+            "sourceId" : "16",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
@@ -578,47 +595,44 @@
           "description" : "Writes statistics into the statistics database.",
           "documentation" : { },
           "group" : "Pipeline",
-          "id" : "12",
+          "id" : "17",
           "name" : "Statistics Writer",
           "properties" : {
             "structurizr.dsl.identifier" : "aggregator_consumer"
           },
           "relationships" : [ {
             "description" : "Writes aggregated statistics",
-            "destinationId" : "15",
-            "id" : "49",
-            "properties" : {
-              "structurizr.dsl.identifier" : "f2d9e645-34e0-4a1e-8b4a-f2a4140282ef"
-            },
-            "sourceId" : "12",
+            "destinationId" : "20",
+            "id" : "55",
+            "sourceId" : "17",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         } ],
         "description" : "Aggregates past results into statistics.",
         "documentation" : { },
-        "id" : "8",
+        "id" : "13",
         "name" : "Result Aggregator",
         "properties" : {
           "structurizr.dsl.identifier" : "aggregator"
         },
         "relationships" : [ {
           "description" : "Reads historic results",
-          "destinationId" : "14",
-          "id" : "47",
-          "linkedRelationshipId" : "46",
-          "sourceId" : "8"
+          "destinationId" : "19",
+          "id" : "53",
+          "linkedRelationshipId" : "52",
+          "sourceId" : "13"
         }, {
           "description" : "Writes aggregated statistics",
-          "destinationId" : "15",
-          "id" : "50",
-          "linkedRelationshipId" : "49",
-          "sourceId" : "8"
+          "destinationId" : "20",
+          "id" : "56",
+          "linkedRelationshipId" : "55",
+          "sourceId" : "13"
         } ],
         "tags" : "Element,Container"
       }, {
         "documentation" : { },
-        "id" : "13",
+        "id" : "18",
         "name" : "Exam Terms Database",
         "properties" : {
           "structurizr.dsl.identifier" : "term_database"
@@ -626,7 +640,7 @@
         "tags" : "Element,Container,Database"
       }, {
         "documentation" : { },
-        "id" : "14",
+        "id" : "19",
         "name" : "Exam Results Database",
         "properties" : {
           "structurizr.dsl.identifier" : "results_database"
@@ -634,7 +648,7 @@
         "tags" : "Element,Container,Database"
       }, {
         "documentation" : { },
-        "id" : "15",
+        "id" : "20",
         "name" : "Exam Statistics Database",
         "properties" : {
           "structurizr.dsl.identifier" : "stats_database"
@@ -643,7 +657,7 @@
       }, {
         "description" : "Displays data to the users and allows them to send requests.",
         "documentation" : { },
-        "id" : "16",
+        "id" : "21",
         "name" : "Exam Web App",
         "properties" : {
           "structurizr.dsl.identifier" : "exams_web_app"
@@ -651,44 +665,38 @@
         "relationships" : [ {
           "description" : "Requests information and changes about exam terms",
           "destinationId" : "2",
-          "id" : "28",
-          "properties" : {
-            "structurizr.dsl.identifier" : "25f53210-dc38-4ad2-a985-95ffb9b7a8f0"
-          },
-          "sourceId" : "16",
+          "id" : "33",
+          "sourceId" : "21",
           "tags" : "Relationship"
         }, {
           "description" : "Requests information and changes about exam results",
+          "destinationId" : "8",
+          "id" : "34",
+          "sourceId" : "21",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Requests statistics about exam results",
+          "destinationId" : "10",
+          "id" : "35",
+          "sourceId" : "21",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Requests statistics about exam results",
+          "destinationId" : "9",
+          "id" : "36",
+          "linkedRelationshipId" : "35",
+          "sourceId" : "21"
+        }, {
+          "description" : "Requests information and interactive possibilities",
           "destinationId" : "3",
-          "id" : "29",
-          "properties" : {
-            "structurizr.dsl.identifier" : "74dcc921-1e85-4935-913d-372154161918"
-          },
-          "sourceId" : "16",
+          "id" : "37",
+          "sourceId" : "21",
           "tags" : "Relationship"
-        }, {
-          "description" : "Requests statistics about exam results",
-          "destinationId" : "5",
-          "id" : "30",
-          "properties" : {
-            "structurizr.dsl.identifier" : "f55c3532-eac3-43ba-a41b-0573949d8e4d"
-          },
-          "sourceId" : "16",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Requests statistics about exam results",
-          "destinationId" : "4",
-          "id" : "31",
-          "linkedRelationshipId" : "30",
-          "sourceId" : "16"
         }, {
           "description" : "Delegates authentication and authorisation",
-          "destinationId" : "20",
-          "id" : "32",
-          "properties" : {
-            "structurizr.dsl.identifier" : "924c869b-40c6-4284-85f9-95cbe08ac839"
-          },
-          "sourceId" : "16",
+          "destinationId" : "25",
+          "id" : "38",
+          "sourceId" : "21",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Web Front-End"
@@ -703,34 +711,34 @@
       },
       "relationships" : [ {
         "description" : "Assures user authenticity",
-        "destinationId" : "20",
-        "id" : "23",
-        "linkedRelationshipId" : "21",
+        "destinationId" : "25",
+        "id" : "28",
+        "linkedRelationshipId" : "26",
         "sourceId" : "1"
       }, {
         "description" : "Asks for room reservations",
-        "destinationId" : "17",
-        "id" : "35",
-        "linkedRelationshipId" : "34",
+        "destinationId" : "22",
+        "id" : "41",
+        "linkedRelationshipId" : "40",
         "sourceId" : "1"
       }, {
         "description" : "Reads which students are enrolled into which courses",
-        "destinationId" : "18",
-        "id" : "37",
-        "linkedRelationshipId" : "36",
+        "destinationId" : "23",
+        "id" : "43",
+        "linkedRelationshipId" : "42",
         "sourceId" : "1"
       }, {
         "description" : "Requests to send notifications",
-        "destinationId" : "19",
-        "id" : "39",
-        "linkedRelationshipId" : "38",
+        "destinationId" : "24",
+        "id" : "45",
+        "linkedRelationshipId" : "44",
         "sourceId" : "1"
       } ],
       "tags" : "Element,Software System"
     }, {
       "description" : "Allows users to view and manage schedules.",
       "documentation" : { },
-      "id" : "17",
+      "id" : "22",
       "location" : "Unspecified",
       "name" : "Schedules System",
       "properties" : {
@@ -740,7 +748,7 @@
     }, {
       "description" : "Allows users to manage courses and enroll into courses.",
       "documentation" : { },
-      "id" : "18",
+      "id" : "23",
       "location" : "Unspecified",
       "name" : "Enrollment System",
       "properties" : {
@@ -750,7 +758,7 @@
     }, {
       "description" : "Sends notifications to users.",
       "documentation" : { },
-      "id" : "19",
+      "id" : "24",
       "location" : "Unspecified",
       "name" : "Notification System",
       "properties" : {
@@ -760,7 +768,7 @@
     }, {
       "description" : "Provides Authentication and Authorisation.",
       "documentation" : { },
-      "id" : "20",
+      "id" : "25",
       "location" : "Unspecified",
       "name" : "Auth",
       "properties" : {
@@ -771,107 +779,183 @@
   },
   "name" : "Examination System",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlICJFeGFtaW5hdGlvbiBTeXN0ZW0iICIiIHsKICAgIG1vZGVsIHsKICAgICAgICBTID0gc29mdHdhcmVTeXN0ZW0gIkV4YW1pbmF0aW9uIFN5c3RlbSIgIkFsbG93cyB1c2VycyB0byB2aWV3IGFuZCBtYW5hZ2UgZXhhbSB0ZXJtcyBhbmQgcmVzdWx0cyBhbmQgZW5yb2xsIGludG8gZXhhbSB0ZXJtcy4gQWxzbyBwcm92aWRlcyBzdGF0aXN0aWNzIHRvIG1hbmFnZXJzLiIgewogICAgICAgICAgICB0ZXJtX21hbmFnZXIgPSBjb250YWluZXIgIkV4YW0gVGVybXMgTWFuYWdlciIgIk1hbmFnZXMgZXhhbSB0ZXJtcy4iCiAgICAgICAgICAgIHJlc3VsdF9tYW5hZ2VyID0gY29udGFpbmVyICJSZXN1bHQgTWFuYWdlciIgIk1hbmFnZXMgY291cnNlIGNyZWRpdHMgYW5kIGV4YW0gcmVzdWx0cy4iCiAgICAgICAgICAgIHN0YXRzX21hbmFnZXIgPSBjb250YWluZXIgIkV4YW0gU3RhdGlzdGljcyBNYW5hZ2VyIiAiTWFuYWdlcyByZXN1bHQgc3RhdGlzdGljcy4iIHsKICAgICAgICAgICAgICAgIGdyb3VwICJBUEkgTGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICBzdGF0c19pbnRlcmZhY2UgPSBjb21wb25lbnQgIlN0YXRpc3RpY3MgSW50ZXJmYWNlIiAiVHJhbnNsYXRlcyBBUEkgcmVxdWVzdHMgdG8gYnVzc2luZXNzIGxvZ2ljIGNhbGxzLiIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGdyb3VwICJCdXNpbmVzcyBMYXllciIgewogICAgICAgICAgICAgICAgICAgIHN0YXRzX2NvbnRyb2xsZXIgPSBjb21wb25lbnQgIlN0YXRpc3RpY3MiICJFbmNhcHN1bGF0ZXMgc3RhdGlzdGljcyBpbmZvIGJ1c2luZXNzIGxvZ2ljLiIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGdyb3VwICJQZXJzaXN0ZW5jZSBMYXllciIgewogICAgICAgICAgICAgICAgICAgIHN0YXRzX3JlcG8gPSBjb21wb25lbnQgIlN0YXRpc3RpY3MgUmVwb3NpdG9yeSIgIlByb3ZpZGVzIGFjY2VzcyB0byB0aGUgdW5kZXJseWluZyBzdGF0aXN0aWNzIGRhdGFiYXNlLiIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfSAgICAKICAgICAgICAgICAgCiAgICAgICAgICAgIGFnZ3JlZ2F0b3IgPSBjb250YWluZXIgIlJlc3VsdCBBZ2dyZWdhdG9yIiAiQWdncmVnYXRlcyBwYXN0IHJlc3VsdHMgaW50byBzdGF0aXN0aWNzLiIgewogICAgICAgICAgICAgICAgZ3JvdXAgIlByZXNlbnRhdGlvbiIgewogICAgICAgICAgICAgICAgICAgIGFnZ3JlZ2F0b3JfbWFuYWdlciA9IGNvbXBvbmVudCAiVGFzayBNYW5hZ2VyIiAiU3RhcnRzIHRoZSB0YXNrIGFuZCBwcm92aWRlcyB0aGUgcGFyYW1ldGVycyBvZiB0aGUgdGFzay4gKENvbW1hbmQgbGluZSBpbnRlcmZhY2UpIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgZ3JvdXAgIlBpcGVsaW5lIiB7CiAgICAgICAgICAgICAgICAgICAgYWdncmVnYXRvcl9wcm9kdWNlciA9IGNvbXBvbmVudCAiUmVzdWx0IFJlYWRlciIgIlJlYWRzIGhpc3RvcmljIHJlc3VsdHMgZm9yIHRoZSB0YXNrIGFuZCBjcmVhdGVzIGEgc3RyZWFtLiIKICAgICAgICAgICAgICAgICAgICBhZ2dyZWdhdG9yX3RyYW5zZm9ybWVyID0gY29tcG9uZW50ICJBZ2dyZWdhdG9yIiAiQWdncmVnYXRlcyByZXN1bHRzIGludG8gc3RhdGlzdGljcyBiYXNlZCBvbiB0aGUgc2V0dGluZ3MuIgogICAgICAgICAgICAgICAgICAgIGFnZ3JlZ2F0b3JfY29uc3VtZXIgPSBjb21wb25lbnQgIlN0YXRpc3RpY3MgV3JpdGVyIiAiV3JpdGVzIHN0YXRpc3RpY3MgaW50byB0aGUgc3RhdGlzdGljcyBkYXRhYmFzZS4iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIHRlcm1fZGF0YWJhc2UgPSBjb250YWluZXIgIkV4YW0gVGVybXMgRGF0YWJhc2UiICIiICIiICJEYXRhYmFzZSIKICAgICAgICAgICAgcmVzdWx0c19kYXRhYmFzZSA9IGNvbnRhaW5lciAiRXhhbSBSZXN1bHRzIERhdGFiYXNlIiAiIiAiIiAiRGF0YWJhc2UiCiAgICAgICAgICAgIHN0YXRzX2RhdGFiYXNlID0gY29udGFpbmVyICJFeGFtIFN0YXRpc3RpY3MgRGF0YWJhc2UiICIiICIiICJEYXRhYmFzZSIKICAgICAgICAgICAgCiAgICAgICAgICAgIGV4YW1zX3dlYl9hcHAgPSBjb250YWluZXIgIkV4YW0gV2ViIEFwcCIgIkRpc3BsYXlzIGRhdGEgdG8gdGhlIHVzZXJzIGFuZCBhbGxvd3MgdGhlbSB0byBzZW5kIHJlcXVlc3RzLiIgIiIgIldlYiBGcm9udC1FbmQiCiAgICAgICAgfQoKICAgICAgICBzeXN0ZW1fc2NoZWR1bGVzID0gc29mdHdhcmVTeXN0ZW0gIlNjaGVkdWxlcyBTeXN0ZW0iICJBbGxvd3MgdXNlcnMgdG8gdmlldyBhbmQgbWFuYWdlIHNjaGVkdWxlcy4iICJFeGlzdGluZyBTeXN0ZW0iCiAgICAgICAgc3lzdGVtX2Vucm9sbG1lbnQgPSBzb2Z0d2FyZVN5c3RlbSAiRW5yb2xsbWVudCBTeXN0ZW0iICJBbGxvd3MgdXNlcnMgdG8gbWFuYWdlIGNvdXJzZXMgYW5kIGVucm9sbCBpbnRvIGNvdXJzZXMuIiAiRXhpc3RpbmcgU3lzdGVtIgogICAgICAgIHN5c3RlbV9ub3RpZmljYXRpb25zID0gc29mdHdhcmVTeXN0ZW0gIk5vdGlmaWNhdGlvbiBTeXN0ZW0iICJTZW5kcyBub3RpZmljYXRpb25zIHRvIHVzZXJzLiIgIkV4aXN0aW5nIFN5c3RlbSIKICAgICAgICBzeXN0ZW1fYXV0aCA9IHNvZnR3YXJlU3lzdGVtICJBdXRoIiAiUHJvdmlkZXMgQXV0aGVudGljYXRpb24gYW5kIEF1dGhvcmlzYXRpb24uIiAiRXhpc3RpbmcgU3lzdGVtIgoKICAgICAgICBzdGF0c19pbnRlcmZhY2UgLT4gc3lzdGVtX2F1dGggIkFzc3VyZXMgdXNlciBhdXRoZW50aWNpdHkiCiAgICAgICAgc3RhdHNfaW50ZXJmYWNlIC0+IHN0YXRzX2NvbnRyb2xsZXIgIlRyYW5zbGF0ZXMgdXNlciByZXF1ZXN0cyIKICAgICAgICBzdGF0c19jb250cm9sbGVyIC0+IHN0YXRzX3JlcG8gIlByb3ZpZGVzIHN0YXRpc3RpY2FsIGRhdGEiCiAgICAgICAgc3RhdHNfcmVwbyAtPiBzdGF0c19kYXRhYmFzZSAiQWNjZXNzZXMgc3RhdGlzdGljYWwgZGF0YSIKCiAgICAgICAgZXhhbXNfd2ViX2FwcCAtPiB0ZXJtX21hbmFnZXIgIlJlcXVlc3RzIGluZm9ybWF0aW9uIGFuZCBjaGFuZ2VzIGFib3V0IGV4YW0gdGVybXMiCiAgICAgICAgZXhhbXNfd2ViX2FwcCAtPiByZXN1bHRfbWFuYWdlciAiUmVxdWVzdHMgaW5mb3JtYXRpb24gYW5kIGNoYW5nZXMgYWJvdXQgZXhhbSByZXN1bHRzIgogICAgICAgIGV4YW1zX3dlYl9hcHAgLT4gc3RhdHNfaW50ZXJmYWNlICJSZXF1ZXN0cyBzdGF0aXN0aWNzIGFib3V0IGV4YW0gcmVzdWx0cyIKICAgICAgICBleGFtc193ZWJfYXBwIC0+IHN5c3RlbV9hdXRoICJEZWxlZ2F0ZXMgYXV0aGVudGljYXRpb24gYW5kIGF1dGhvcmlzYXRpb24iCgogICAgICAgIHRlcm1fbWFuYWdlciAtPiB0ZXJtX2RhdGFiYXNlICJSZWFkcyBhbmQgd3JpdGVzIGV4YW0gdGVybXMiCiAgICAgICAgdGVybV9tYW5hZ2VyIC0+IHN5c3RlbV9zY2hlZHVsZXMgIkFza3MgZm9yIHJvb20gcmVzZXJ2YXRpb25zIgogICAgICAgIHRlcm1fbWFuYWdlciAtPiBzeXN0ZW1fZW5yb2xsbWVudCAiUmVhZHMgd2hpY2ggc3R1ZGVudHMgYXJlIGVucm9sbGVkIGludG8gd2hpY2ggY291cnNlcyIKICAgICAgICB0ZXJtX21hbmFnZXIgLT4gc3lzdGVtX25vdGlmaWNhdGlvbnMgIlJlcXVlc3RzIHRvIHNlbmQgbm90aWZpY2F0aW9ucyIKICAgICAgICB0ZXJtX21hbmFnZXIgLT4gc3lzdGVtX2F1dGggIkRlbGVnYXRlcyBhdXRoZW50aWNhdGlvbiBhbmQgYXV0aG9yaXNhdGlvbiIKCiAgICAgICAgcmVzdWx0X21hbmFnZXIgLT4gcmVzdWx0c19kYXRhYmFzZSAiUmVhZHMgYW5kIHdyaXRlcyBleGFtIHJlc3VsdHMiCiAgICAgICAgcmVzdWx0X21hbmFnZXIgLT4gc3lzdGVtX2Vucm9sbG1lbnQgIlJlYWRzIHdoaWNoIHN0dWRlbnRzIGFyZSBlbnJvbGxlZCBpbnRvIHdoaWNoIGNvdXJzZXMiCiAgICAgICAgcmVzdWx0X21hbmFnZXIgLT4gc3lzdGVtX25vdGlmaWNhdGlvbnMgIlJlcXVlc3RzIHRvIHNlbmQgbm90aWZpY2F0aW9ucyIKICAgICAgICByZXN1bHRfbWFuYWdlciAtPiBzeXN0ZW1fYXV0aCAiRGVsZWdhdGVzIGF1dGhlbnRpY2F0aW9uIGFuZCBhdXRob3Jpc2F0aW9uIgoKICAgICAgICBhZ2dyZWdhdG9yX21hbmFnZXIgLT4gYWdncmVnYXRvcl9wcm9kdWNlciAiU3RhcnRzIHRhc2sgd2l0aCBzZWxlY3RlZCBwYXJhbWV0ZXJzIgogICAgICAgIGFnZ3JlZ2F0b3JfcHJvZHVjZXIgLT4gcmVzdWx0c19kYXRhYmFzZSAiUmVhZHMgaGlzdG9yaWMgcmVzdWx0cyIKICAgICAgICBhZ2dyZWdhdG9yX3RyYW5zZm9ybWVyIC0+IGFnZ3JlZ2F0b3JfbWFuYWdlciAiUmVhZHMgYWdncmVnYXRpb24gcnVsZXMiCiAgICAgICAgYWdncmVnYXRvcl9jb25zdW1lciAtPiBzdGF0c19kYXRhYmFzZSAiV3JpdGVzIGFnZ3JlZ2F0ZWQgc3RhdGlzdGljcyIKICAgICAgICBhZ2dyZWdhdG9yX3Byb2R1Y2VyIC0+IGFnZ3JlZ2F0b3JfdHJhbnNmb3JtZXIgIlBhc3NlcyBkYXRhIgogICAgICAgIGFnZ3JlZ2F0b3JfdHJhbnNmb3JtZXIgLT4gYWdncmVnYXRvcl9jb25zdW1lciAiUGFzc2VzIGRhdGEiCgogICAgICAgIHN0YXRzX21hbmFnZXIgLT4gc3RhdHNfZGF0YWJhc2UgIlJlYWRzIHN0YXRpc3RpY3MiCiAgICAgICAgc3RhdHNfbWFuYWdlciAtPiBzeXN0ZW1fYXV0aCAiRGVsZWdhdGVzIGF1dGhlbnRpY2F0aW9uIGFuZCBhdXRob3Jpc2F0aW9uIgoKICAgICAgICBtYW5hZ2VyID0gcGVyc29uICJNYW5hZ2VyIgogICAgICAgIHN0dWRlbnQgPSBwZXJzb24gIlN0dWRlbnQiCiAgICAgICAgdGVhY2hlciA9IHBlcnNvbiAiVGVhY2hlciIKCiAgICAgICAgbWFuYWdlciAtPiBleGFtc193ZWJfYXBwICJSZWFkcyBhYm91dCB0ZWFjaGVyIHBlcmZvcm1hbmNlIgogICAgICAgIHN0dWRlbnQgLT4gZXhhbXNfd2ViX2FwcCAiUmVnaXN0ZXJzIHRvIGV4YW0gdGVybXMgYW5kIHZpZXdzIGV4YW0gcmVzdWx0cyIKICAgICAgICB0ZWFjaGVyIC0+IGV4YW1zX3dlYl9hcHAgIk1ha2VzIGV4YW0gdGVybXMgYW5kIHNldHMgZXhhbSByZXN1bHRzIgoKICAgICAgICBkZXBsb3ltZW50RW52aXJvbm1lbnQgIkxpdmUiICAgIHsKICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIlVzZXIncyB3ZWIgYnJvd3NlciIgIiIgIiIgICAgewogICAgICAgICAgICAgICAgdXNlcl9odG1sX2luc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgZXhhbXNfd2ViX2FwcAogICAgICAgICAgICB9CiAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJBcHBsaWNhdGlvbiBTZXJ2ZXIiICIiICJVYnVudHUgMTguMDQgTFRTIiAgIHsKICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJXZWIgc2VydmVyIiAiIiAiQXBhY2hlIFRvbWNhdCAxMC4xLjE1IiAgewogICAgICAgICAgICAgICAgICAgIHRlcm1fYXBwX2luc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgdGVybV9tYW5hZ2VyCiAgICAgICAgICAgICAgICAgICAgcmVzdWx0X2FwcF9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHJlc3VsdF9tYW5hZ2VyCiAgICAgICAgICAgICAgICAgICAgc3RhdHNfYXBwX2luc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2Ugc3RhdHNfbWFuYWdlcgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJBZ3JlZ2F0b3IgU2VydmVyIiAiIiAiVWJ1bnR1IDE4LjA0IExUUyJ7CiAgICAgICAgICAgICAgICBhZ2dyZWdhdG9yX2FwcF9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGFnZ3JlZ2F0b3IKICAgICAgICAgICAgfQogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiRGF0YWJhc2UgU2VydmVyIiAiIiAiVWJ1bnR1IDE4LjA0IExUUyIgICB7CiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiUmVsYXRpb25hbCBEQiBzZXJ2ZXIiICIiICJPcmFjbGUgMTkuMS4wIiB7CiAgICAgICAgICAgICAgICAgICAgdGVybV9kYl9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHRlcm1fZGF0YWJhc2UKICAgICAgICAgICAgICAgICAgICBzdGF0c19kYl9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHN0YXRzX2RhdGFiYXNlCiAgICAgICAgICAgICAgICAgICAgcmVzdWx0c19kYl9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHJlc3VsdHNfZGF0YWJhc2UKICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgUyAiQzEiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9sYXlvdXQgdGIKICAgICAgICB9CgogICAgICAgIGNvbnRhaW5lciBTICJDMiIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICB9CgogICAgICAgIGNvbXBvbmVudCBzdGF0c19tYW5hZ2VyICJDM19zdGF0aXN0aWNzIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IGFnZ3JlZ2F0b3IgIkMzX0FnZ3JlZ2F0b3IiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQoKICAgICAgICBkZXBsb3ltZW50IFMgIkxpdmUiICJMaXZlX0RlcGxveW1lbnQiICAgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICB9CgogICAgICAgIHRoZW1lIGRlZmF1bHQKCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiRXhpc3RpbmcgU3lzdGVtIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICM5OTk5OTkKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQoKICAgICAgICAgICAgZWxlbWVudCAiV2ViIEZyb250LUVuZCIgIHsKICAgICAgICAgICAgICAgIHNoYXBlIFdlYkJyb3dzZXIKICAgICAgICAgICAgfQoKICAgICAgICAgICAgZWxlbWVudCAiRGF0YWJhc2UiICB7CiAgICAgICAgICAgICAgICBzaGFwZSBDeWxpbmRlcgogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQp9"
+    "structurizr.dsl" : "d29ya3NwYWNlICJFeGFtaW5hdGlvbiBTeXN0ZW0iICIiIHsKICAgIG1vZGVsIHsKICAgICAgICBTID0gc29mdHdhcmVTeXN0ZW0gIkV4YW1pbmF0aW9uIFN5c3RlbSIgIkFsbG93cyB1c2VycyB0byB2aWV3IGFuZCBtYW5hZ2UgZXhhbSB0ZXJtcyBhbmQgcmVzdWx0cyBhbmQgZW5yb2xsIGludG8gZXhhbSB0ZXJtcy4gQWxzbyBwcm92aWRlcyBzdGF0aXN0aWNzIHRvIG1hbmFnZXJzLiIgewogICAgICAgICAgICB0ZXJtX21hbmFnZXIgPSBjb250YWluZXIgIkV4YW0gVGVybXMgTWFuYWdlciIgIk1hbmFnZXMgZXhhbSB0ZXJtcy4iewogICAgICAgICAgICAgICAgZ3JvdXAgIkFQSSBMYXllciIgewogICAgICAgICAgICAgICAgICAgIHRlcm1faW50ZXJmYWNlID0gY29tcG9uZW50ICJFeGFtIFRlcm1zIEludGVyZmFjZSIgIlRyYW5zbGF0ZXMgQVBJIHJlcXVlc3RzIHRvIGJ1c2luZXNzIGxvZ2ljIGNhbGxzLiIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGdyb3VwICJCdXNpbmVzcyBMYXllciIgewogICAgICAgICAgICAgICAgICAgIHRlcm1fY29udHJvbGxlciA9IGNvbXBvbmVudCAiRXhhbSBUZXJtcyBDb250cm9sbGVyIiAiRW5jYXBzdWxhdGVzIGV4YW0gdGVybSBtYW5hZ2VtZW50IGJ1c2luZXNzIGxvZ2ljLiIKICAgICAgICAgICAgICAgICAgICB0ZXJtX3NjaGVkdWxlciA9IGNvbXBvbmVudCAiRXhhbSBTY2hlZHVsZXIiICJIYW5kbGVzIHNjaGVkdWxpbmcgb2YgZXhhbSB0ZXJtcyBhbmQgY29vcmRpbmF0ZXMgd2l0aCB0aGUgU2NoZWR1bGVzIFN5c3RlbS4iCiAgICAgICAgICAgICAgICAgICAgdGVybV9ub3RpZmllciA9IGNvbXBvbmVudCAiTm90aWZpY2F0aW9uIENvb3JkaW5hdG9yIiAiUmVxdWVzdHMgbm90aWZpY2F0aW9ucyB0byBiZSBzZW50IGZvciBleGFtIHRlcm0gdXBkYXRlcy4iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBncm91cCAiUGVyc2lzdGVuY2UgTGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICB0ZXJtX3JlcG8gPSBjb21wb25lbnQgIkV4YW0gVGVybXMgUmVwb3NpdG9yeSIgIlByb3ZpZGVzIGFjY2VzcyB0byB0aGUgdW5kZXJseWluZyBleGFtIHRlcm1zIGRhdGFiYXNlLiIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICByZXN1bHRfbWFuYWdlciA9IGNvbnRhaW5lciAiUmVzdWx0IE1hbmFnZXIiICJNYW5hZ2VzIGNvdXJzZSBjcmVkaXRzIGFuZCBleGFtIHJlc3VsdHMuIgogICAgICAgICAgICBzdGF0c19tYW5hZ2VyID0gY29udGFpbmVyICJFeGFtIFN0YXRpc3RpY3MgTWFuYWdlciIgIk1hbmFnZXMgcmVzdWx0IHN0YXRpc3RpY3MuIiB7CiAgICAgICAgICAgICAgICBncm91cCAiQVBJIExheWVyIiB7CiAgICAgICAgICAgICAgICAgICAgc3RhdHNfaW50ZXJmYWNlID0gY29tcG9uZW50ICJTdGF0aXN0aWNzIEludGVyZmFjZSIgIlRyYW5zbGF0ZXMgQVBJIHJlcXVlc3RzIHRvIGJ1c3NpbmVzcyBsb2dpYyBjYWxscy4iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBncm91cCAiQnVzaW5lc3MgTGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICBzdGF0c19jb250cm9sbGVyID0gY29tcG9uZW50ICJTdGF0aXN0aWNzIiAiRW5jYXBzdWxhdGVzIHN0YXRpc3RpY3MgaW5mbyBidXNpbmVzcyBsb2dpYy4iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBncm91cCAiUGVyc2lzdGVuY2UgTGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICBzdGF0c19yZXBvID0gY29tcG9uZW50ICJTdGF0aXN0aWNzIFJlcG9zaXRvcnkiICJQcm92aWRlcyBhY2Nlc3MgdG8gdGhlIHVuZGVybHlpbmcgc3RhdGlzdGljcyBkYXRhYmFzZS4iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGFnZ3JlZ2F0b3IgPSBjb250YWluZXIgIlJlc3VsdCBBZ2dyZWdhdG9yIiAiQWdncmVnYXRlcyBwYXN0IHJlc3VsdHMgaW50byBzdGF0aXN0aWNzLiIgewogICAgICAgICAgICAgICAgZ3JvdXAgIlByZXNlbnRhdGlvbiIgewogICAgICAgICAgICAgICAgICAgIGFnZ3JlZ2F0b3JfbWFuYWdlciA9IGNvbXBvbmVudCAiVGFzayBNYW5hZ2VyIiAiU3RhcnRzIHRoZSB0YXNrIGFuZCBwcm92aWRlcyB0aGUgcGFyYW1ldGVycyBvZiB0aGUgdGFzay4gKENvbW1hbmQgbGluZSBpbnRlcmZhY2UpIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgZ3JvdXAgIlBpcGVsaW5lIiB7CiAgICAgICAgICAgICAgICAgICAgYWdncmVnYXRvcl9wcm9kdWNlciA9IGNvbXBvbmVudCAiUmVzdWx0IFJlYWRlciIgIlJlYWRzIGhpc3RvcmljIHJlc3VsdHMgZm9yIHRoZSB0YXNrIGFuZCBjcmVhdGVzIGEgc3RyZWFtLiIKICAgICAgICAgICAgICAgICAgICBhZ2dyZWdhdG9yX3RyYW5zZm9ybWVyID0gY29tcG9uZW50ICJBZ2dyZWdhdG9yIiAiQWdncmVnYXRlcyByZXN1bHRzIGludG8gc3RhdGlzdGljcyBiYXNlZCBvbiB0aGUgc2V0dGluZ3MuIgogICAgICAgICAgICAgICAgICAgIGFnZ3JlZ2F0b3JfY29uc3VtZXIgPSBjb21wb25lbnQgIlN0YXRpc3RpY3MgV3JpdGVyIiAiV3JpdGVzIHN0YXRpc3RpY3MgaW50byB0aGUgc3RhdGlzdGljcyBkYXRhYmFzZS4iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIHRlcm1fZGF0YWJhc2UgPSBjb250YWluZXIgIkV4YW0gVGVybXMgRGF0YWJhc2UiICIiICIiICJEYXRhYmFzZSIKICAgICAgICAgICAgcmVzdWx0c19kYXRhYmFzZSA9IGNvbnRhaW5lciAiRXhhbSBSZXN1bHRzIERhdGFiYXNlIiAiIiAiIiAiRGF0YWJhc2UiCiAgICAgICAgICAgIHN0YXRzX2RhdGFiYXNlID0gY29udGFpbmVyICJFeGFtIFN0YXRpc3RpY3MgRGF0YWJhc2UiICIiICIiICJEYXRhYmFzZSIKCiAgICAgICAgICAgIGV4YW1zX3dlYl9hcHAgPSBjb250YWluZXIgIkV4YW0gV2ViIEFwcCIgIkRpc3BsYXlzIGRhdGEgdG8gdGhlIHVzZXJzIGFuZCBhbGxvd3MgdGhlbSB0byBzZW5kIHJlcXVlc3RzLiIgIiIgIldlYiBGcm9udC1FbmQiCiAgICAgICAgfQoKICAgICAgICBzeXN0ZW1fc2NoZWR1bGVzID0gc29mdHdhcmVTeXN0ZW0gIlNjaGVkdWxlcyBTeXN0ZW0iICJBbGxvd3MgdXNlcnMgdG8gdmlldyBhbmQgbWFuYWdlIHNjaGVkdWxlcy4iICJFeGlzdGluZyBTeXN0ZW0iCiAgICAgICAgc3lzdGVtX2Vucm9sbG1lbnQgPSBzb2Z0d2FyZVN5c3RlbSAiRW5yb2xsbWVudCBTeXN0ZW0iICJBbGxvd3MgdXNlcnMgdG8gbWFuYWdlIGNvdXJzZXMgYW5kIGVucm9sbCBpbnRvIGNvdXJzZXMuIiAiRXhpc3RpbmcgU3lzdGVtIgogICAgICAgIHN5c3RlbV9ub3RpZmljYXRpb25zID0gc29mdHdhcmVTeXN0ZW0gIk5vdGlmaWNhdGlvbiBTeXN0ZW0iICJTZW5kcyBub3RpZmljYXRpb25zIHRvIHVzZXJzLiIgIkV4aXN0aW5nIFN5c3RlbSIKICAgICAgICBzeXN0ZW1fYXV0aCA9IHNvZnR3YXJlU3lzdGVtICJBdXRoIiAiUHJvdmlkZXMgQXV0aGVudGljYXRpb24gYW5kIEF1dGhvcmlzYXRpb24uIiAiRXhpc3RpbmcgU3lzdGVtIgoKICAgICAgICBzdGF0c19pbnRlcmZhY2UgLT4gc3lzdGVtX2F1dGggIkFzc3VyZXMgdXNlciBhdXRoZW50aWNpdHkiCiAgICAgICAgc3RhdHNfaW50ZXJmYWNlIC0+IHN0YXRzX2NvbnRyb2xsZXIgIlRyYW5zbGF0ZXMgdXNlciByZXF1ZXN0cyIKICAgICAgICBzdGF0c19jb250cm9sbGVyIC0+IHN0YXRzX3JlcG8gIlByb3ZpZGVzIHN0YXRpc3RpY2FsIGRhdGEiCiAgICAgICAgc3RhdHNfcmVwbyAtPiBzdGF0c19kYXRhYmFzZSAiQWNjZXNzZXMgc3RhdGlzdGljYWwgZGF0YSIKCiAgICAgICAgZXhhbXNfd2ViX2FwcCAtPiB0ZXJtX21hbmFnZXIgIlJlcXVlc3RzIGluZm9ybWF0aW9uIGFuZCBjaGFuZ2VzIGFib3V0IGV4YW0gdGVybXMiCiAgICAgICAgZXhhbXNfd2ViX2FwcCAtPiByZXN1bHRfbWFuYWdlciAiUmVxdWVzdHMgaW5mb3JtYXRpb24gYW5kIGNoYW5nZXMgYWJvdXQgZXhhbSByZXN1bHRzIgogICAgICAgIGV4YW1zX3dlYl9hcHAgLT4gc3RhdHNfaW50ZXJmYWNlICJSZXF1ZXN0cyBzdGF0aXN0aWNzIGFib3V0IGV4YW0gcmVzdWx0cyIKICAgICAgICBleGFtc193ZWJfYXBwIC0+IHRlcm1faW50ZXJmYWNlICJSZXF1ZXN0cyBpbmZvcm1hdGlvbiBhbmQgaW50ZXJhY3RpdmUgcG9zc2liaWxpdGllcyIKICAgICAgICBleGFtc193ZWJfYXBwIC0+IHN5c3RlbV9hdXRoICJEZWxlZ2F0ZXMgYXV0aGVudGljYXRpb24gYW5kIGF1dGhvcmlzYXRpb24iCgogICAgICAgIHRlcm1fbWFuYWdlciAtPiB0ZXJtX2RhdGFiYXNlICJSZWFkcyBhbmQgd3JpdGVzIGV4YW0gdGVybXMiCiAgICAgICAgdGVybV9tYW5hZ2VyIC0+IHN5c3RlbV9zY2hlZHVsZXMgIkFza3MgZm9yIHJvb20gcmVzZXJ2YXRpb25zIgogICAgICAgIHRlcm1fbWFuYWdlciAtPiBzeXN0ZW1fZW5yb2xsbWVudCAiUmVhZHMgd2hpY2ggc3R1ZGVudHMgYXJlIGVucm9sbGVkIGludG8gd2hpY2ggY291cnNlcyIKICAgICAgICB0ZXJtX21hbmFnZXIgLT4gc3lzdGVtX25vdGlmaWNhdGlvbnMgIlJlcXVlc3RzIHRvIHNlbmQgbm90aWZpY2F0aW9ucyIKICAgICAgICB0ZXJtX21hbmFnZXIgLT4gc3lzdGVtX2F1dGggIkRlbGVnYXRlcyBhdXRoZW50aWNhdGlvbiBhbmQgYXV0aG9yaXNhdGlvbiIKCiAgICAgICAgcmVzdWx0X21hbmFnZXIgLT4gcmVzdWx0c19kYXRhYmFzZSAiUmVhZHMgYW5kIHdyaXRlcyBleGFtIHJlc3VsdHMiCiAgICAgICAgcmVzdWx0X21hbmFnZXIgLT4gc3lzdGVtX2Vucm9sbG1lbnQgIlJlYWRzIHdoaWNoIHN0dWRlbnRzIGFyZSBlbnJvbGxlZCBpbnRvIHdoaWNoIGNvdXJzZXMiCiAgICAgICAgcmVzdWx0X21hbmFnZXIgLT4gc3lzdGVtX25vdGlmaWNhdGlvbnMgIlJlcXVlc3RzIHRvIHNlbmQgbm90aWZpY2F0aW9ucyIKICAgICAgICByZXN1bHRfbWFuYWdlciAtPiBzeXN0ZW1fYXV0aCAiRGVsZWdhdGVzIGF1dGhlbnRpY2F0aW9uIGFuZCBhdXRob3Jpc2F0aW9uIgoKICAgICAgICBhZ2dyZWdhdG9yX21hbmFnZXIgLT4gYWdncmVnYXRvcl9wcm9kdWNlciAiU3RhcnRzIHRhc2sgd2l0aCBzZWxlY3RlZCBwYXJhbWV0ZXJzIgogICAgICAgIGFnZ3JlZ2F0b3JfcHJvZHVjZXIgLT4gcmVzdWx0c19kYXRhYmFzZSAiUmVhZHMgaGlzdG9yaWMgcmVzdWx0cyIKICAgICAgICBhZ2dyZWdhdG9yX3RyYW5zZm9ybWVyIC0+IGFnZ3JlZ2F0b3JfbWFuYWdlciAiUmVhZHMgYWdncmVnYXRpb24gcnVsZXMiCiAgICAgICAgYWdncmVnYXRvcl9jb25zdW1lciAtPiBzdGF0c19kYXRhYmFzZSAiV3JpdGVzIGFnZ3JlZ2F0ZWQgc3RhdGlzdGljcyIKICAgICAgICBhZ2dyZWdhdG9yX3Byb2R1Y2VyIC0+IGFnZ3JlZ2F0b3JfdHJhbnNmb3JtZXIgIlBhc3NlcyBkYXRhIgogICAgICAgIGFnZ3JlZ2F0b3JfdHJhbnNmb3JtZXIgLT4gYWdncmVnYXRvcl9jb25zdW1lciAiUGFzc2VzIGRhdGEiCgogICAgICAgIG1hbmFnZXIgPSBwZXJzb24gIk1hbmFnZXIiCiAgICAgICAgc3R1ZGVudCA9IHBlcnNvbiAiU3R1ZGVudCIKICAgICAgICB0ZWFjaGVyID0gcGVyc29uICJUZWFjaGVyIgoKICAgICAgICBtYW5hZ2VyIC0+IGV4YW1zX3dlYl9hcHAgIlJlYWRzIGFib3V0IHRlYWNoZXIgcGVyZm9ybWFuY2UiCiAgICAgICAgc3R1ZGVudCAtPiBleGFtc193ZWJfYXBwICJSZWdpc3RlcnMgdG8gZXhhbSB0ZXJtcyBhbmQgdmlld3MgZXhhbSByZXN1bHRzIgogICAgICAgIHRlYWNoZXIgLT4gZXhhbXNfd2ViX2FwcCAiTWFrZXMgZXhhbSB0ZXJtcyBhbmQgc2V0cyBleGFtIHJlc3VsdHMiCgogICAgICAgICMgRXhhbSB0ZXJtIG1hbmFnZXIKICAgICAgICB0ZXJtX2ludGVyZmFjZSAtPiB0ZXJtX2NvbnRyb2xsZXIgIlRyYW5zbGF0ZXMgdXNlciByZXF1ZXN0cyBmb3IgdGVybSBtYW5hZ2VtZW50IgogICAgICAgIHRlcm1fY29udHJvbGxlciAtPiB0ZXJtX3JlcG8gIlJlYWRzIGFuZCB3cml0ZXMgdGVybSBkYXRhIgogICAgICAgIHRlcm1fcmVwbyAtPiB0ZXJtX2RhdGFiYXNlICJBY2Nlc3NlcyBleGFtIHRlcm0gZGF0YSIKICAgICAgICB0ZXJtX2NvbnRyb2xsZXIgLT4gdGVybV9zY2hlZHVsZXIgIkNvb3JkaW5hdGVzIGZvciByb29tIHJlc2VydmF0aW9ucyIKICAgICAgICB0ZXJtX3NjaGVkdWxlciAtPiBzeXN0ZW1fc2NoZWR1bGVzICJBc2tzIGZvciByb29tIHJlc2VydmF0aW9ucyIKICAgICAgICB0ZXJtX2NvbnRyb2xsZXIgLT4gdGVybV9ub3RpZmllciAiUmVxdWVzdHMgbm90aWZpY2F0aW9ucyIKICAgICAgICB0ZXJtX25vdGlmaWVyIC0+IHN5c3RlbV9ub3RpZmljYXRpb25zICJTZW5kcyBub3RpZmljYXRpb25zIGFib3V0IHRlcm0gdXBkYXRlcyIKICAgICAgICB0ZXJtX2ludGVyZmFjZSAtPiBzeXN0ZW1fYXV0aCAiQXNzdXJlcyB1c2VyIGF1dGhlbnRpY2l0eSIKCiAgICAgICAgZGVwbG95bWVudEVudmlyb25tZW50ICJMaXZlIiAgICB7CiAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJVc2VyJ3Mgd2ViIGJyb3dzZXIiICIiICIiICAgIHsKICAgICAgICAgICAgICAgIHVzZXJfaHRtbF9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGV4YW1zX3dlYl9hcHAKICAgICAgICAgICAgfQogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQXBwbGljYXRpb24gU2VydmVyIiAiIiAiVWJ1bnR1IDE4LjA0IExUUyIgICB7CiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiV2ViIHNlcnZlciIgIiIgIkFwYWNoZSBUb21jYXQgMTAuMS4xNSIgIHsKICAgICAgICAgICAgICAgICAgICB0ZXJtX2FwcF9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHRlcm1fbWFuYWdlcgogICAgICAgICAgICAgICAgICAgIHJlc3VsdF9hcHBfaW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSByZXN1bHRfbWFuYWdlcgogICAgICAgICAgICAgICAgICAgIHN0YXRzX2FwcF9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHN0YXRzX21hbmFnZXIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQWdyZWdhdG9yIFNlcnZlciIgIiIgIlVidW50dSAxOC4wNCBMVFMiewogICAgICAgICAgICAgICAgYWdncmVnYXRvcl9hcHBfaW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBhZ2dyZWdhdG9yCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkRhdGFiYXNlIFNlcnZlciIgIiIgIlVidW50dSAxOC4wNCBMVFMiICAgewogICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIlJlbGF0aW9uYWwgREIgc2VydmVyIiAiIiAiT3JhY2xlIDE5LjEuMCIgewogICAgICAgICAgICAgICAgICAgIHRlcm1fZGJfaW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSB0ZXJtX2RhdGFiYXNlCiAgICAgICAgICAgICAgICAgICAgc3RhdHNfZGJfaW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBzdGF0c19kYXRhYmFzZQogICAgICAgICAgICAgICAgICAgIHJlc3VsdHNfZGJfaW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSByZXN1bHRzX2RhdGFiYXNlCiAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1Db250ZXh0IFMgIkMxIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvbGF5b3V0IHRiCiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgUyAiQzIiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQoKICAgICAgICBjb21wb25lbnQgc3RhdHNfbWFuYWdlciAiQzNfc3RhdGlzdGljcyIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICB9CgogICAgICAgIGNvbXBvbmVudCBhZ2dyZWdhdG9yICJDM19BZ2dyZWdhdG9yIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IHRlcm1fbWFuYWdlciAiQzNfRXhhbVRlcm1NYW5hZ2VyInsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9sYXlvdXQgbHIKICAgICAgICB9CgogICAgICAgIGRlcGxveW1lbnQgUyAiTGl2ZSIgIkxpdmVfRGVwbG95bWVudCIgICB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgZHluYW1pYyBzdGF0c19tYW5hZ2VyIHsKICAgICAgICAgICAgdGl0bGUgIlZpZXdpbmcgc3RhdGlzdGljcyIKICAgICAgICAgICAgZXhhbXNfd2ViX2FwcCAtPiBzeXN0ZW1fYXV0aCAiVXNlciBhdXRoZW50aWNhdGVzIgogICAgICAgICAgICBleGFtc193ZWJfYXBwIC0+IHN0YXRzX2ludGVyZmFjZSAiQXBwIHJlcXVlc3RzIHN0YXRpc3RpY3MgZm9yIGdpdmVuIHF1ZXJyeSIKICAgICAgICAgICAgc3RhdHNfaW50ZXJmYWNlIC0+IHN5c3RlbV9hdXRoICJBc3N1cmVzIHRoZSB1c2VyIGlzIGF1dGhhbnRpY2F0ZWQgYW5kIGhhcyB0aGUgcmlnaHRzIgogICAgICAgICAgICBzdGF0c19pbnRlcmZhY2UgLT4gc3RhdHNfY29udHJvbGxlciAiVHJhbnNsYXRlcyBhbmQgZm9yd2FyZHMgcmVxdWVzdCIKICAgICAgICAgICAgc3RhdHNfY29udHJvbGxlciAtPiBzdGF0c19yZXBvICJSZXF1ZXN0cyBkYXRhIGZvciB0aGUgcXVlcnJ5IgogICAgICAgICAgICBzdGF0c19yZXBvIC0+IHN0YXRzX2RhdGFiYXNlICJBY2Nlc3MgdGhlIGRhdGEgaW4gdGhlIGRhdGFiYXNlIgogICAgICAgICAgICBzdGF0c19kYXRhYmFzZSAtPiBzdGF0c19yZXBvICJSZXR1cm5zIHRoZSBkYXRhIgogICAgICAgICAgICBzdGF0c19yZXBvIC0+IHN0YXRzX2NvbnRyb2xsZXIgIlJldHVybnMgdGhlIGRhdGEiCiAgICAgICAgICAgIHN0YXRzX2NvbnRyb2xsZXIgLT4gc3RhdHNfaW50ZXJmYWNlICJUcmFuc2Zvcm1zIHRoZSBkYXRhIgogICAgICAgICAgICBzdGF0c19pbnRlcmZhY2UgLT4gZXhhbXNfd2ViX2FwcCAiU2VyaWFsaXplcyBhbmQgc2VuZHMgdGhlIGRhdGEiCiAgICAgICAgfQoKICAgICAgICB0aGVtZSBkZWZhdWx0CgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIkV4aXN0aW5nIFN5c3RlbSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjOTk5OTk5CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGVsZW1lbnQgIldlYiBGcm9udC1FbmQiICB7CiAgICAgICAgICAgICAgICBzaGFwZSBXZWJCcm93c2VyCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiAgewogICAgICAgICAgICAgICAgc2hhcGUgQ3lsaW5kZXIKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KfQ=="
   },
   "views" : {
     "componentViews" : [ {
-      "containerId" : "4",
+      "containerId" : "9",
       "dimensions" : {
         "height" : 1325,
         "width" : 2550
       },
       "elements" : [ {
-        "id" : "5",
-        "x" : 239,
-        "y" : 659
+        "id" : "10",
+        "x" : 240,
+        "y" : 660
       }, {
-        "id" : "6",
-        "x" : 1049,
-        "y" : 654
+        "id" : "11",
+        "x" : 1050,
+        "y" : 655
       }, {
-        "id" : "7",
-        "x" : 1859,
-        "y" : 659
-      }, {
-        "id" : "15",
-        "x" : 1859,
-        "y" : 199
-      }, {
-        "id" : "16",
-        "x" : 239,
-        "y" : 199
+        "id" : "12",
+        "x" : 1860,
+        "y" : 660
       }, {
         "id" : "20",
-        "x" : 1049,
-        "y" : 199
+        "x" : 1860,
+        "y" : 200
+      }, {
+        "id" : "21",
+        "x" : 240,
+        "y" : 200
+      }, {
+        "id" : "25",
+        "x" : 1050,
+        "y" : 200
       } ],
       "externalContainerBoundariesVisible" : false,
       "key" : "C3_statistics",
       "order" : 3,
       "relationships" : [ {
-        "id" : "21"
-      }, {
-        "id" : "24"
-      }, {
-        "id" : "25"
-      }, {
         "id" : "26"
+      }, {
+        "id" : "29"
       }, {
         "id" : "30"
       }, {
-        "id" : "32"
+        "id" : "31"
+      }, {
+        "id" : "35"
+      }, {
+        "id" : "38"
       } ]
     }, {
-      "containerId" : "8",
+      "containerId" : "13",
       "dimensions" : {
         "height" : 1995,
         "width" : 2410
       },
       "elements" : [ {
-        "id" : "9",
-        "x" : 239,
-        "y" : 239
-      }, {
-        "id" : "10",
-        "x" : 239,
-        "y" : 844
-      }, {
-        "id" : "11",
-        "x" : 979,
-        "y" : 844
-      }, {
-        "id" : "12",
-        "x" : 1719,
-        "y" : 844
-      }, {
         "id" : "14",
-        "x" : 239,
-        "y" : 1494
+        "x" : 240,
+        "y" : 240
       }, {
         "id" : "15",
-        "x" : 1719,
-        "y" : 1494
+        "x" : 240,
+        "y" : 845
+      }, {
+        "id" : "16",
+        "x" : 980,
+        "y" : 845
+      }, {
+        "id" : "17",
+        "x" : 1720,
+        "y" : 845
+      }, {
+        "id" : "19",
+        "x" : 240,
+        "y" : 1495
+      }, {
+        "id" : "20",
+        "x" : 1720,
+        "y" : 1495
       } ],
       "externalContainerBoundariesVisible" : false,
       "key" : "C3_Aggregator",
       "order" : 4,
       "relationships" : [ {
-        "id" : "45"
-      }, {
-        "id" : "46"
-      }, {
-        "id" : "48"
-      }, {
-        "id" : "49"
-      }, {
         "id" : "51"
       }, {
         "id" : "52"
+      }, {
+        "id" : "54"
+      }, {
+        "id" : "55"
+      }, {
+        "id" : "57"
+      }, {
+        "id" : "58"
+      } ]
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "2",
+      "elements" : [ {
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "18",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "21",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "22",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "24",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "25",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "C3_ExamTermManager",
+      "order" : 5,
+      "relationships" : [ {
+        "id" : "37"
+      }, {
+        "id" : "38"
+      }, {
+        "id" : "68"
+      }, {
+        "id" : "69"
+      }, {
+        "id" : "70"
+      }, {
+        "id" : "71"
+      }, {
+        "id" : "72"
+      }, {
+        "id" : "73"
+      }, {
+        "id" : "74"
+      }, {
+        "id" : "75"
       } ]
     } ],
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "Live_Deployment",
+      "lastSavedView" : "Dynamic-001",
       "metadataSymbols" : "SquareBrackets",
       "styles" : {
         "elements" : [ {
@@ -891,91 +975,75 @@
     },
     "containerViews" : [ {
       "dimensions" : {
-        "height" : 2885,
+        "height" : 2876,
         "width" : 3938
       },
       "elements" : [ {
         "id" : "2",
         "x" : 880,
-        "y" : 1359
-      }, {
-        "id" : "3",
-        "x" : 1935,
-        "y" : 1344
-      }, {
-        "id" : "4",
-        "x" : 3268,
-        "y" : 1344
+        "y" : 1356
       }, {
         "id" : "8",
-        "x" : 2601,
-        "y" : 1344
+        "x" : 1676,
+        "y" : 1356
+      }, {
+        "id" : "9",
+        "x" : 3268,
+        "y" : 1356
       }, {
         "id" : "13",
-        "x" : 870,
-        "y" : 1874
-      }, {
-        "id" : "14",
-        "x" : 1935,
-        "y" : 1879
-      }, {
-        "id" : "15",
-        "x" : 3268,
-        "y" : 1899
-      }, {
-        "id" : "16",
-        "x" : 1440,
-        "y" : 824
-      }, {
-        "id" : "17",
-        "x" : 200,
-        "y" : 1369
+        "x" : 2472,
+        "y" : 1356
       }, {
         "id" : "18",
-        "x" : 840,
-        "y" : 2364
+        "x" : 700,
+        "y" : 1896
       }, {
         "id" : "19",
-        "x" : 1925,
-        "y" : 2384
+        "x" : 2295,
+        "y" : 1896
       }, {
         "id" : "20",
         "x" : 3268,
-        "y" : 364
+        "y" : 1896
       }, {
-        "id" : "55",
+        "id" : "21",
+        "x" : 1440,
+        "y" : 825
+      }, {
+        "id" : "22",
+        "x" : 200,
+        "y" : 1356
+      }, {
+        "id" : "23",
+        "x" : 1165,
+        "y" : 2376
+      }, {
+        "id" : "24",
+        "x" : 1795,
+        "y" : 2376
+      }, {
+        "id" : "25",
+        "x" : 3268,
+        "y" : 365
+      }, {
+        "id" : "59",
         "x" : 1960,
-        "y" : 199
+        "y" : 200
       }, {
-        "id" : "56",
+        "id" : "60",
         "x" : 990,
-        "y" : 199
+        "y" : 200
       }, {
-        "id" : "57",
+        "id" : "61",
         "x" : 1475,
-        "y" : 199
+        "y" : 200
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "C2",
       "order" : 2,
       "relationships" : [ {
-        "id" : "22",
-        "vertices" : [ {
-          "x" : 3643,
-          "y" : 1004
-        } ]
-      }, {
-        "id" : "27",
-        "vertices" : [ {
-          "x" : 3343,
-          "y" : 1771
-        } ]
-      }, {
-        "id" : "28"
-      }, {
-        "id" : "29"
-      }, {
-        "id" : "31"
+        "id" : "27"
       }, {
         "id" : "32"
       }, {
@@ -983,172 +1051,263 @@
       }, {
         "id" : "34"
       }, {
-        "id" : "36",
-        "vertices" : [ {
-          "x" : 465,
-          "y" : 2009
-        } ]
+        "id" : "36"
       }, {
-        "id" : "38",
-        "vertices" : [ {
-          "x" : 1735,
-          "y" : 1949
-        } ]
+        "id" : "38"
+      }, {
+        "id" : "39"
       }, {
         "id" : "40"
       }, {
-        "id" : "41"
+        "id" : "42"
       }, {
-        "id" : "42",
+        "id" : "44",
         "vertices" : [ {
-          "x" : 1575,
-          "y" : 1804
+          "x" : 1815,
+          "y" : 1946
         } ]
       }, {
-        "id" : "43",
-        "vertices" : [ {
-          "x" : 2595,
-          "y" : 2044
-        } ]
-      }, {
-        "id" : "44"
+        "id" : "46"
       }, {
         "id" : "47"
       }, {
+        "id" : "48",
+        "vertices" : [ {
+          "x" : 1530,
+          "y" : 1916
+        } ]
+      }, {
+        "id" : "49"
+      }, {
         "id" : "50"
       }, {
-        "id" : "53",
-        "vertices" : [ {
-          "x" : 3643,
-          "y" : 1771
-        } ]
+        "id" : "53"
       }, {
-        "id" : "54",
-        "vertices" : [ {
-          "x" : 3343,
-          "y" : 1004
-        } ]
-      }, {
-        "id" : "58"
-      }, {
-        "id" : "60"
+        "id" : "56"
       }, {
         "id" : "62"
+      }, {
+        "id" : "64"
+      }, {
+        "id" : "66"
       } ],
       "softwareSystemId" : "1"
     } ],
     "deploymentViews" : [ {
       "dimensions" : {
         "height" : 2298,
-        "width" : 3402
+        "width" : 3061
       },
       "elements" : [ {
-        "id" : "64",
-        "x" : 175,
-        "y" : 175
-      }, {
-        "id" : "65",
-        "x" : 989,
-        "y" : 219
-      }, {
-        "id" : "66",
-        "x" : 175,
-        "y" : 175
-      }, {
-        "id" : "67",
-        "x" : 175,
-        "y" : 175
-      }, {
-        "id" : "68",
-        "x" : 239,
-        "y" : 865
-      }, {
-        "id" : "70",
-        "x" : 1739,
-        "y" : 865
-      }, {
-        "id" : "72",
-        "x" : 989,
-        "y" : 865
-      }, {
-        "id" : "74",
-        "x" : 175,
-        "y" : 175
-      }, {
-        "id" : "75",
-        "x" : 2731,
-        "y" : 980
-      }, {
         "id" : "76",
         "x" : 175,
         "y" : 175
       }, {
         "id" : "77",
+        "x" : 989,
+        "y" : 219
+      }, {
+        "id" : "78",
         "x" : 175,
         "y" : 175
       }, {
-        "id" : "78",
+        "id" : "79",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "80",
+        "x" : 239,
+        "y" : 865
+      }, {
+        "id" : "82",
+        "x" : 949,
+        "y" : 865
+      }, {
+        "id" : "84",
+        "x" : 1660,
+        "y" : 865
+      }, {
+        "id" : "86",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "87",
+        "x" : 2390,
+        "y" : 1070
+      }, {
+        "id" : "88",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "89",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "90",
         "x" : 239,
         "y" : 1615
       }, {
-        "id" : "80",
-        "x" : 989,
+        "id" : "92",
+        "x" : 1660,
         "y" : 1615
       }, {
-        "id" : "84",
-        "x" : 1739,
+        "id" : "95",
+        "x" : 949,
         "y" : 1615
       } ],
       "environment" : "Live",
       "key" : "Live_Deployment",
-      "order" : 5,
+      "order" : 6,
       "relationships" : [ {
-        "id" : "69",
+        "id" : "81",
         "vertices" : [ {
           "x" : 839,
           "y" : 656
         } ]
       }, {
-        "id" : "71",
+        "id" : "83",
         "vertices" : [ {
           "x" : 1589,
           "y" : 656
         } ]
       }, {
-        "id" : "73"
-      }, {
-        "id" : "79"
-      }, {
-        "id" : "81",
-        "vertices" : [ {
-          "x" : 1064,
-          "y" : 1390
-        } ]
-      }, {
-        "id" : "82",
-        "vertices" : [ {
-          "x" : 1364,
-          "y" : 1390
-        } ]
-      }, {
-        "id" : "83",
-        "vertices" : [ {
-          "x" : 2476,
-          "y" : 1340
-        }, {
-          "x" : 2076,
-          "y" : 1480
-        } ]
-      }, {
         "id" : "85"
       }, {
-        "id" : "86"
+        "id" : "91"
+      }, {
+        "id" : "93"
+      }, {
+        "id" : "94"
+      }, {
+        "id" : "96"
+      }, {
+        "id" : "97"
       } ],
       "softwareSystemId" : "1"
     } ],
+    "dynamicViews" : [ {
+      "dimensions" : {
+        "height" : 1507,
+        "width" : 3140
+      },
+      "elementId" : "9",
+      "elements" : [ {
+        "id" : "10",
+        "x" : 240,
+        "y" : 841
+      }, {
+        "id" : "11",
+        "x" : 990,
+        "y" : 841
+      }, {
+        "id" : "12",
+        "x" : 1740,
+        "y" : 841
+      }, {
+        "id" : "20",
+        "x" : 2490,
+        "y" : 841
+      }, {
+        "id" : "21",
+        "x" : 240,
+        "y" : 199
+      }, {
+        "id" : "25",
+        "x" : 990,
+        "y" : 199
+      } ],
+      "externalBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Dynamic-001",
+      "order" : 7,
+      "relationships" : [ {
+        "description" : "User authenticates",
+        "id" : "38",
+        "order" : "1",
+        "response" : false
+      }, {
+        "description" : "App requests statistics for given querry",
+        "id" : "35",
+        "order" : "2",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 335,
+          "y" : 669
+        } ]
+      }, {
+        "description" : "Assures the user is authanticated and has the rights",
+        "id" : "26",
+        "order" : "3",
+        "response" : false
+      }, {
+        "description" : "Translates and forwards request",
+        "id" : "29",
+        "order" : "4",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 840,
+          "y" : 1141
+        } ]
+      }, {
+        "description" : "Requests data for the querry",
+        "id" : "30",
+        "order" : "5",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1590,
+          "y" : 1141
+        } ]
+      }, {
+        "description" : "Access the data in the database",
+        "id" : "31",
+        "order" : "6",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2340,
+          "y" : 1141
+        } ]
+      }, {
+        "description" : "Returns the data",
+        "id" : "31",
+        "order" : "7",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2340,
+          "y" : 841
+        } ]
+      }, {
+        "description" : "Returns the data",
+        "id" : "30",
+        "order" : "8",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1590,
+          "y" : 841
+        } ]
+      }, {
+        "description" : "Transforms the data",
+        "id" : "29",
+        "order" : "9",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 840,
+          "y" : 841
+        } ]
+      }, {
+        "description" : "Serializes and sends the data",
+        "id" : "35",
+        "order" : "10",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 620,
+          "y" : 669
+        } ]
+      } ],
+      "title" : "Viewing statistics"
+    } ],
     "systemContextViews" : [ {
       "automaticLayout" : {
-        "applied" : true,
+        "applied" : false,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
@@ -1156,60 +1315,56 @@
         "rankSeparation" : 300,
         "vertices" : false
       },
-      "dimensions" : {
-        "height" : 1900,
-        "width" : 3100
-      },
       "elements" : [ {
         "id" : "1",
-        "x" : 1325,
-        "y" : 800
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "17",
-        "x" : 200,
-        "y" : 1400
+        "id" : "22",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "18",
-        "x" : 950,
-        "y" : 1400
+        "id" : "23",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "19",
-        "x" : 1700,
-        "y" : 1400
+        "id" : "24",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "20",
-        "x" : 2450,
-        "y" : 1400
+        "id" : "25",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "55",
-        "x" : 575,
-        "y" : 200
+        "id" : "59",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "56",
-        "x" : 1325,
-        "y" : 200
+        "id" : "60",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "57",
-        "x" : 2075,
-        "y" : 200
+        "id" : "61",
+        "x" : 0,
+        "y" : 0
       } ],
       "enterpriseBoundaryVisible" : true,
       "key" : "C1",
       "order" : 1,
       "relationships" : [ {
-        "id" : "23"
+        "id" : "28"
       }, {
-        "id" : "35"
+        "id" : "41"
       }, {
-        "id" : "37"
+        "id" : "43"
       }, {
-        "id" : "39"
-      }, {
-        "id" : "59"
-      }, {
-        "id" : "61"
+        "id" : "45"
       }, {
         "id" : "63"
+      }, {
+        "id" : "65"
+      }, {
+        "id" : "67"
       } ],
       "softwareSystemId" : "1"
     } ]
