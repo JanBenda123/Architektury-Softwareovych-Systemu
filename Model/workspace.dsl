@@ -15,17 +15,17 @@ workspace "Examination System" "" {
                 }
             }
             result_manager = container "Result Manager" "Manages course credits and exam results." {
-                
+
                 group "API Layer" {
                     result_interface = component "Result Interface" "Translates API requests to business logic calls for result management."
                 }
-            
+
                 group "Business Layer" {
                     result_processor = component "Result Processor" "Processes and updates exam results."
                     result_retriever = component "Result Retriever" "Handles retrieval of exam results for display."
                     result_notifier = component "Notification Coordinator" "Requests notifications for result updates."
                 }
-            
+
                 group "Persistence Layer" {
                     result_repo = component "Result Repository" "Provides access to the underlying exam results database."
                 }
@@ -95,16 +95,16 @@ workspace "Examination System" "" {
         aggregator_consumer -> stats_database "Writes aggregated statistics"
         aggregator_producer -> aggregator_transformer "Passes data"
         aggregator_transformer -> aggregator_consumer "Passes data"
-        
+
         result_interface -> result_processor "Translates API requests for result processing"
         result_interface -> result_retriever "Translates API requests for result retrieval"
         result_processor -> result_repo "Writes results to the database"
         result_retriever -> result_repo "Reads results from the database"
         result_repo -> results_database "Accesses exam result data"
         result_processor -> result_notifier "Requests notifications for result updates"
-        result_notifier -> system_notifications "Sends notifications about term updates" 
+        result_notifier -> system_notifications "Sends notifications about term updates"
         result_interface -> system_auth "Assures user authenticity"
-        
+
 
         manager = person "Manager"
         student = person "Student"
@@ -123,6 +123,8 @@ workspace "Examination System" "" {
         term_controller -> term_notifier "Requests notifications"
         term_notifier -> system_notifications "Sends notifications about term updates"
         term_interface -> system_auth "Assures user authenticity"
+
+        term_controller -> result_interface "Queries for required credits"
 
         deploymentEnvironment "Live"    {
             deploymentNode "User's web browser" "" ""    {
@@ -171,9 +173,45 @@ workspace "Examination System" "" {
             include *
             autolayout lr
         }
-        
+
         component result_manager "C3_ResultManager" {
             include *
+        }
+
+        dynamic stats_manager {
+            title "Viewing statistics"
+            exams_web_app -> system_auth "User authenticates"
+            exams_web_app -> stats_interface "App requests statistics for given querry"
+            stats_interface -> system_auth "Assures the user is authanticated and has the rights"
+            stats_interface -> stats_controller "Translates and forwards request"
+            stats_controller -> stats_repo "Requests data for the querry"
+            stats_repo -> stats_database "Access the data in the database"
+            stats_database -> stats_repo "Returns the data"
+            stats_repo -> stats_controller "Returns the data"
+            stats_controller -> stats_interface "Transforms the data"
+            stats_interface -> exams_web_app "Serializes and sends the data"
+        }
+
+        dynamic term_manager {
+            title "Enrolling into an exam term"
+            exams_web_app -> system_auth "User authenticates"
+            exams_web_app -> term_interface "Request enrollment"
+            term_interface -> system_auth "Assures the user is authanticated and has the rights"
+            term_interface -> term_controller "Translates and forwards request"
+            term_controller -> term_repo "Requests exam term data"
+            term_repo -> term_database "Access the data in the database"
+            term_database -> term_repo "Returns the term data"
+            term_repo -> term_controller "Returns the term data"
+            term_controller -> result_interface "Queries for required credits"
+            result_interface -> term_controller "Returns the credits data"
+            term_controller -> term_repo "Writes enrollment"
+            term_repo -> term_database "Writes enrollment"
+            term_database -> term_repo "Sends confirmation"
+            term_repo -> term_controller "Sends confirmation"
+            term_controller -> term_interface "Sends result"
+            term_interface -> exams_web_app "Serializes and sends the result"
+            term_controller -> term_notifier "Requests notification"
+            term_notifier -> system_notifications "Sends notification"
         }
 
         deployment S "Live" "Live_Deployment"   {
