@@ -96,6 +96,7 @@ workspace "Examination System" "" {
         term_controller -> term_notifier "Requests notifications"
         term_notifier -> system_notifications "Sends notifications about term updates"
         term_interface -> system_auth "Assures user authenticity"
+        term_controller -> result_manager "Queries about required credits"
 
         deploymentEnvironment "Live"    {
             deploymentNode "User's web browser" "" ""    {
@@ -161,6 +162,29 @@ workspace "Examination System" "" {
             stats_repo -> stats_controller "Returns the data"
             stats_controller -> stats_interface "Transforms the data"
             stats_interface -> exams_web_app "Serializes and sends the data"
+        }
+
+
+        dynamic term_manager {
+            title "Enrolling into an exam term"
+            exams_web_app -> system_auth "User authenticates"
+            exams_web_app -> term_interface "Request enrollment"
+            term_interface -> system_auth "Assures the user is authanticated and has the rights"
+            term_interface -> term_controller "Translates and forwards request"
+            term_controller -> term_repo "Requests exam term data"
+            term_repo -> term_database "Access the data in the database"
+            term_database -> term_repo "Returns the term data"
+            term_repo -> term_controller "Returns the term data"
+            term_controller -> result_manager "Queries for required credits"
+            result_manager -> term_controller "Returns the credits data"
+            term_controller -> term_repo "Writes enrollment"
+            term_repo -> term_database "Writes enrollment"
+            term_database -> term_repo "Sends confirmation"
+            term_repo -> term_controller "Sends confirmation"
+            term_controller -> term_interface "Sends result"
+            term_interface -> exams_web_app "Serializes and sends the result"
+            term_controller -> term_notifier "Requests notification"
+            term_notifier -> system_notifications "Sends notification"
         }
 
         theme default
