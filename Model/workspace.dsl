@@ -149,6 +149,20 @@ workspace "Examination System" "" {
             include *
         }
 
+        dynamic stats_manager {
+            title "Viewing statistics"
+            exams_web_app -> system_auth "User authenticates"
+            exams_web_app -> stats_interface "App requests statistics for given querry"
+            stats_interface -> system_auth "Assures the user is authanticated and has the rights"
+            stats_interface -> stats_controller "Translates and forwards request"
+            stats_controller -> stats_repo "Requests data for the querry"
+            stats_repo -> stats_database "Access the data in the database"
+            stats_database -> stats_repo "Returns the data"
+            stats_repo -> stats_controller "Returns the data"
+            stats_controller -> stats_interface "Transforms the data"
+            stats_interface -> exams_web_app "Serializes and sends the data"
+        }
+
         theme default
 
         styles {
