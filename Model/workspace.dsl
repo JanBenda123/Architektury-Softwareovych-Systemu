@@ -125,6 +125,8 @@ workspace "Examination System" "" {
 
         # Exam term manager
         term_interface -> term_controller "Translates user requests for term management"
+        term_interface -> system_enrollment "Reads which students are enrolled in which courses. "
+        term_interface -> system_enrollment "Reads which teacher teaches which courses."
         term_controller -> term_repo "Reads and writes term data"
         term_repo -> term_database "Accesses exam term data"
         term_controller -> term_scheduler "Coordinates for room reservations"
@@ -132,6 +134,7 @@ workspace "Examination System" "" {
         term_controller -> term_notifier "Requests notifications"
         term_notifier -> system_notifications "Sends notifications about term updates"
         term_interface -> system_auth "Assures user authenticity"
+        term_controller -> result_manager "Queries about required credits"
 
         term_controller -> result_interface "Queries for required credits"
 
@@ -243,7 +246,6 @@ workspace "Examination System" "" {
 
         component term_manager "C3_ExamTermManager"{
             include *
-            autolayout lr
         }
 
         component result_manager "C3_ResultManager" {
@@ -278,6 +280,32 @@ workspace "Examination System" "" {
             result_interface -> term_controller "Returns the credits data"
             term_controller -> term_repo "Writes enrollment"
             term_repo -> term_database "Writes enrollment"
+            term_database -> term_repo "Sends confirmation"
+            term_repo -> term_controller "Sends confirmation"
+            term_controller -> term_interface "Sends result"
+            term_interface -> exams_web_app "Serializes and sends the result"
+            term_controller -> term_notifier "Requests notification"
+            term_notifier -> system_notifications "Sends notification"
+        }
+        
+        dynamic term_manager {
+            title "Creating an exam term"
+            exams_web_app -> system_auth "User authenticates"
+            exams_web_app -> term_interface "Request exam module"
+            term_interface -> system_auth "Assures the user is authanticated and has the rights"
+            term_interface -> system_enrollment "Get teachers courses"
+            term_interface -> exams_web_app "Show all possible cources to the teacher"
+            exams_web_app -> term_interface "Write all information abot the exam"
+            term_interface -> term_controller "Translates and forwards request"
+            term_controller -> term_repo "Requests exams data"
+            term_repo -> term_database "Access the data in the database"
+            term_database -> term_repo "Returns the exams data"
+            term_repo -> term_controller "Returns the subjects data"
+            term_controller -> term_scheduler "Pass data"
+            term_scheduler -> system_schedules "Check all information"
+            term_scheduler -> term_controller "Return result"
+            term_controller -> term_repo "Writes exam"
+            term_repo -> term_database "Writes data"
             term_database -> term_repo "Sends confirmation"
             term_repo -> term_controller "Sends confirmation"
             term_controller -> term_interface "Sends result"
