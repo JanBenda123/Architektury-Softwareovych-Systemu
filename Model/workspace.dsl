@@ -44,9 +44,9 @@ workspace "Examination System" "" {
                 }
             }
 
-            aggregator = container "Result Aggregator" "Aggregates past results into statistics." {
+            aggregator = container "Result Aggregator" "Aggregates past results into statistics." "CLI Application" {
                 group "Presentation" {
-                    aggregator_manager = component "Task Manager" "Starts the task and provides the parameters of the task. (Command line interface)"
+                    aggregator_manager = component "Task Manager" "Command line interface. Starts the task and provides the parameters of the task."
                 }
                 group "Pipeline" {
                     aggregator_producer = component "Result Reader" "Reads historic results for the task and creates a stream."
@@ -122,6 +122,7 @@ workspace "Examination System" "" {
         manager -> exams_web_app "Reads about teacher performance"
         student -> exams_web_app "Registers to exam terms and views exam results"
         teacher -> exams_web_app "Makes exam terms and sets exam results"
+        manager -> aggregator_manager "Runs tasks"
 
         # Exam term manager
         term_interface -> term_controller "Translates user requests for term management"
@@ -194,7 +195,7 @@ workspace "Examination System" "" {
                     selenium_test_instance = containerInstance selenium_test
                     apache_jmeter_test_instance = containerInstance apache_jmeter_test
                 }
-            } 
+            }
             deploymentNode "Application Server" "" "Ubuntu 18.04 LTS"   {
                 deploymentNode "Web server" "" "Apache Tomcat 10.1.15"  {
                     test_term_app_instance = containerInstance term_manager
@@ -222,7 +223,7 @@ workspace "Examination System" "" {
                     }
 
             }
-        }        
+        }
 
     }
 
@@ -287,7 +288,7 @@ workspace "Examination System" "" {
             term_controller -> term_notifier "Requests notification"
             term_notifier -> system_notifications "Sends notification"
         }
-        
+
         dynamic term_manager {
             title "Creating an exam term"
             exams_web_app -> system_auth "User authenticates"
@@ -329,10 +330,10 @@ workspace "Examination System" "" {
             exclude "stats_manager -> stats_database"
 
             exclude "aggregator -> stats_database"
-            
-            exclude "aggregator -> results_database" 
-            exclude "term_manager -> result_manager"   
-    
+
+            exclude "aggregator -> results_database"
+            exclude "term_manager -> result_manager"
+
         }
 
         theme default
