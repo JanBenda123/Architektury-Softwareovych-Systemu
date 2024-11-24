@@ -81,6 +81,48 @@ Při vytváření zkoušky potřebuji zarezervovat místnost konání, aby stude
 * vygeneruje zprávu o vytvoření zkoušky
 * mail se odešle pouze studentům, kteří jsou přihlášení na daném předmětu a mají povoleno zasílání zpráv
 
+
+<!-- A ### section for each feature -->
+### Feature: Zapsání se na zkoušku
+
+<!-- The feature described in a form of a user story -->
+Jako student se potřebuji zapsat na termín zkoušky, protože chci daný předmět splnit. Rád bych zjistil všechny možné termíny.
+
+#### Feature breakdown
+
+<!-- The feature breakdown -->
+1. Student na dashboardu vybere modul zkoušek
+2. Systém mu zobrazí všechny jeho předměty, které studuje
+3. Student zvolí předmět, na který se chce zapsat na zkoušku
+4. Student zvolí termín
+5. Systém zkontroluje kapacitu a ověří správnost zadaných informací
+6. Student potvrdí zapsání na zkoušky
+7. Systém zapíše studenta.
+
+#### Responsibilities
+
+<!-- A ##### section for each group of responsibilities -->
+
+##### Responsibillity: Zobrazení studovaných předmětů [2]
+* tabulka : 'Zobrazení studovaných předmětů'
+
+* získání seznamu předmětů, ze společné databáze celkového systému, na základě ID studenta
+* poskytnout studentovi možnost výběru
+  
+##### Responsibillity: Kontrola zadaných informací [5] 
+* tabulka: "Validace zadaných informací", "Kontrola podmínek zápisu", "Kontrola kapacity"
+
+* ověření správnosti formátu zadaných informací
+  * v případě chyby informovat uživatele a poskytnout možnost opravy
+* ověření vyplnění všech údajů
+* kontrola volné kapacity
+  * v případě chyby informovat uživatele a poskytnout možnost výběru nového termínu
+
+##### Responsibillity: Zadání zapsaného studenta do databáze [7]
+* tabulka: "Uložení zápis studenta na zkoušku"
+
+* systém ve správném formátu odešle do databáze záznam o zapsání na zkoušky
+
 <!-- Continue with ### sections for all other features. -->
 
 ### Feature: Udělování zápočtů
