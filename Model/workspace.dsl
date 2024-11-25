@@ -350,6 +350,31 @@ workspace "Examination System" "" {
 
         }
 
+        dynamic result_manager {
+            title "Granting course credits"
+            exams_web_app -> system_auth "User authenticates"
+            exams_web_app -> result_interface "Requests teacher's subjects"
+            result_interface -> system_auth "Assures the user is authenticated and has the rights"
+            result_interface -> result_retriever "Retrieves the list of teacher's subjects and students"
+            result_retriever -> result_repo "Queries data for teacher's subjects and students"
+            result_repo -> results_database "Accesses subjects and students data"
+            results_database -> result_repo "Returns subjects and students data"
+            result_repo -> result_retriever "Returns subjects and students data"
+            result_retriever -> result_interface "Resolves data retrieval"
+            result_interface -> exams_web_app "Displays the list of subjects and students"
+            exams_web_app -> result_interface "Requests to grant credit to selected students"
+            result_interface -> result_processor "Processes the credit granting request"
+            result_processor -> result_repo "Requests the update of credit status"
+            result_repo -> results_database "Modifies the credit data"
+            results_database -> result_repo "Confirms the modification"
+            result_repo -> result_processor "Returns update confirmation"
+            result_processor -> result_notifier "Requests notification about credit status update"
+            result_notifier -> system_notifications "Sends notification to affected students"
+            result_processor -> result_interface "Confirms the update"
+            result_interface -> exams_web_app "Displays confirmation to the teacher"
+            
+        }
+
         deployment S "Live" "Live_Deployment"   {
             include *
         }
