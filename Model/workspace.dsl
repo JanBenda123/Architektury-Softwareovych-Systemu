@@ -14,6 +14,7 @@ workspace "Examination System" "" {
                     term_repo = component "Exam Terms Repository" "Provides access to the underlying exam terms database."
                 }
             }
+            
             result_manager = container "Result Manager" "Manages course credits and exam results." {
 
                 group "API Layer" {
@@ -30,7 +31,6 @@ workspace "Examination System" "" {
                     result_repo = component "Result Repository" "Provides access to the underlying exam results database."
                 }
             }
-
 
             stats_manager = container "Exam Statistics Manager" "Manages result statistics." {
                 group "API Layer" {
@@ -86,6 +86,7 @@ workspace "Examination System" "" {
         exams_web_app -> stats_interface "Requests statistics about exam results"
         exams_web_app -> term_interface "Requests information and interactive possibilities"
         exams_web_app -> system_auth "Delegates authentication and authorisation"
+        exams_web_app -> result_interface "Requests and modifies exam results"
 
         term_manager -> term_database "Reads and writes exam terms"
         term_manager -> system_schedules "Asks for room reservations"
@@ -313,6 +314,40 @@ workspace "Examination System" "" {
             term_interface -> exams_web_app "Serializes and sends the result"
             term_controller -> term_notifier "Requests notification"
             term_notifier -> system_notifications "Sends notification"
+        }
+
+        dynamic result_manager {
+            title "Viewing exam results"
+            exams_web_app -> system_auth "User authenticates"
+            exams_web_app -> result_interface "Requests exam results"
+            result_interface -> system_auth "Assures the user is authanticated and has the rights"
+            result_interface -> result_retriever "Translates the API request"
+            result_retriever -> result_repo "Requests the exam result data"
+            result_repo -> results_database "Queries the Exam DB"
+            results_database -> result_repo  "Retrieves the data from Exam DB"
+            result_repo -> result_retriever "Forwards the data"
+            result_retriever -> result_interface "Resolves the API request"
+            result_interface -> exams_web_app "Serializes and sends results"
+
+
+        }
+
+        dynamic result_manager {
+            title "Updating exam results"
+            exams_web_app -> system_auth "User authenticates"
+            exams_web_app -> result_interface "Requests exam results"
+            result_interface -> system_auth "Assures the user is authanticated and has the rights"
+            result_interface -> result_processor "Translates the API request"
+            result_processor -> result_repo "Requests the modification of exam result"
+            result_repo -> results_database "Modifies the exam results"
+            result_repo -> result_processor "HTTP 200 OK"
+            result_processor -> result_notifier "Requests notification that exam result have beeen changed"
+            result_notifier -> system_notifications "Sends the notification"
+            result_processor -> result_interface "Confirms the transaction"
+            result_interface -> exams_web_app "Confirms the transaction to the user"
+
+
+
         }
 
         deployment S "Live" "Live_Deployment"   {
