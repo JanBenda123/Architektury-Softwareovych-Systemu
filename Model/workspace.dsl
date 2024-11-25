@@ -236,6 +236,13 @@ workspace "Examination System" "" {
 
         container S "C2" {
             include *
+            exclude "selenium_test"
+            exclude "junit_test"
+            exclude "apache_jmeter_test"
+            exclude "toad_oracle"
+            exclude "oracle_enterprise_manager"
+            exclude "oracle_sql_developer"
+            exclude "oracle_rman"
         }
 
         component stats_manager "C3_statistics" {
