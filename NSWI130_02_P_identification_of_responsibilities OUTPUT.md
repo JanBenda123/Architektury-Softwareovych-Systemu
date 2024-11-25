@@ -290,7 +290,7 @@ Jako manažer si chci zobrazit historické záznamy výsledků zkoušek, abych b
 1. Manažer na dashboardu vybere modul zkoušek
 2. Systém mu dá na výběr zda chce statistiky agregovat podle předmětu nebo podle vyučuhjícího
 3. Manažer zvolí předmět/vyučujícího, jehož statistiky ho zajímají
-4. Zobrazí se mu statistiky za celé platné časové období (dobu vyučování předmětu, resp. dobu, po kterou vyučující vyučuje) pro daný předmět/vyučujícího. Tyto statistiky zahrnují celkový počet zapsaných studentů, celkový počet studentů, co úspěšně absolvovali zkoušku, průměrný úspěšný termín, průměrněrou známku a průměrné hodnocení v anketách.
+4. Zobrazí se mu statistiky za celé platné časové období (dobu vyučování předmětu, resp. dobu, po kterou vyučující vyučuje) pro daný předmět/vyučujícího. Tyto statistiky zahrnují celkový počet zapsaných studentů, celkový počet studentů, co úspěšně absolvovali zkoušku, průměrný úspěšný termín a průměrněrou známku.
 5. Pod celkovými statistikami se nachází tabulka statistik pro dané semestry zobzazující stejná data jako v bodě 4., vztahující se k danému semestru.
 6. Kliknutím na jedno z tlačítek "Exportovat v csv" a "Exportovat v json" bude daná statistika stažena v manažerem zadeném formátu pro její další zpracování
 
@@ -298,11 +298,11 @@ Jako manažer si chci zobrazit historické záznamy výsledků zkoušek, abych b
 
 <!-- A ##### section for each group of responsibilities -->
 
-##### Responsibility: Načtení a agragace dat z ostatních modulů
+##### Responsibility: Načtení a agragace dat z ostatních modulů [11]
 
 - získání dat z databází ostatních modulů a jejich agragace podle předmětu/vyučujícího/semestru
 
-##### Responsibility: Zpracování a výpis zpracovaných dat
+##### Responsibility: Zpracování a výpis zpracovaných dat [11]
 
 - výpočet průměrných hodnocení přes zvolené položky
 - zobrazení do tabulek
