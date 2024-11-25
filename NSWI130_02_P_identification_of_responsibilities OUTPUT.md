@@ -217,7 +217,7 @@ Takto se dozvím, zda škole věnuji dostatečně času a jestli zvládám plně
 
 - získat ze společné databáze informace o všech zkouškách, které daný student skládal.
 
-##### Zobrazení získaných zápočtů [2]¨
+##### Zobrazení získaných zápočtů [2]
 
 - tabulka: "Zobrazit své výsledky (napříč předměty)"
 
@@ -252,7 +252,7 @@ Jako učitel potřebuju zobrazit a zapsat výsledky jednotlivých zkoušek, aby 
 - tabulka: "Čtení termínů a jejich detailů", "Čtení výsledků z databáze", "Čtení a zápis statistik", "Uložení výsledků zkoušek"
 
 1. Kontrola pripojeni k internetu
-2. - 8. Pristup k databazi, vytvoreni cache, modelu z cache a jeho vizualizace. Synchronizace s databazi, kontrola persistence zmen v databazi.
+2. – 8. Pristup k databazi, vytvoreni cache, modelu z cache a jeho vizualizace. Synchronizace s databazi, kontrola persistence zmen v databazi.
 3. Napojeni API zprostredkovavajici odesilani emailu pomoci toolu 3 strany?
 
 ##### Responsibillity: Zobrazení vyučovaných předmětů [2]
@@ -288,7 +288,7 @@ Jako manažer si chci zobrazit historické záznamy výsledků zkoušek, abych b
 <!-- The feature breakdown -->
 
 1. Manažer na dashboardu vybere modul zkoušek
-2. Systém mu dá na výběr zda chce statistiky agregovat podle předmětu nebo podle vyučuhjícího
+2. Systém mu dá na výběr zda chce statistiky agregovat podle předmětu nebo podle vyučujícího
 3. Manažer zvolí předmět/vyučujícího, jehož statistiky ho zajímají
 4. Zobrazí se mu statistiky za celé platné časové období (dobu vyučování předmětu, resp. dobu, po kterou vyučující vyučuje) pro daný předmět/vyučujícího. Tyto statistiky zahrnují celkový počet zapsaných studentů, celkový počet studentů, co úspěšně absolvovali zkoušku, průměrný úspěšný termín a průměrněrou známku.
 5. Pod celkovými statistikami se nachází tabulka statistik pro dané semestry zobzazující stejná data jako v bodě 4., vztahující se k danému semestru.
