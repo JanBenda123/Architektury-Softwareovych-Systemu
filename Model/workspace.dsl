@@ -63,7 +63,8 @@ workspace "Examination System" "" {
 
 
             selenium_test = container "Selenium Tests" "Navigation flow & UI Elements"
-            junit_test = container "JUnit Tests" "Unit tests"
+            junit_manager_test = container "JUnit Manager Tests" "Unit tests"
+            junit_aggregator_test = container "JUnit Aggregator Tests" "Unit tests"
             apache_jmeter_test = container "Apache Jmeter Tests" "Load Testing"
             toad_oracle = container "Toad For Oracle" "Functional testing for database"
             oracle_enterprise_manager = container "Oracle Enterprise Manager" "Performance testing"
@@ -144,10 +145,10 @@ workspace "Examination System" "" {
         exams_web_app -> selenium_test "Tests UI"
         exams_web_app -> apache_jmeter_test "Load testing"
 
-        term_manager -> junit_test "Unit tests for Java"
-        result_manager -> junit_test "Unit tests for Java"
-        stats_manager -> junit_test "Unit tests for Java"
-        aggregator -> junit_test "Unit tests for Java"
+        term_manager -> junit_manager_test "Unit tests for Java"
+        result_manager -> junit_manager_test "Unit tests for Java"
+        stats_manager -> junit_manager_test "Unit tests for Java"
+        aggregator -> junit_aggregator_test "Unit tests for Java"
 
         term_database -> oracle_enterprise_manager "Performance testing"
         stats_database -> oracle_enterprise_manager "Performance testing"
@@ -202,13 +203,16 @@ workspace "Examination System" "" {
                     test_term_app_instance = containerInstance term_manager
                     test_result_app_instance = containerInstance result_manager
                     test_stats_app_instance = containerInstance stats_manager
-                    deploymentNode "Unit tests" "JUnit" {
-                        webserver_junit_test_instance = containerInstance junit_test
+                    deploymentNode "Manager Unit tests" "JUnit" {
+                        webserver_junit_manager_test_instance = containerInstance junit_manager_test
                     }
                 }
             }
             deploymentNode "Agregator Server" "" "Ubuntu 18.04 LTS"{
                 test_aggregator_app_instance = containerInstance aggregator
+                deploymentNode "Aggregator Unit tests" "JUnit" {
+                        webserver_junit_manager_test_instance_agregator = containerInstance junit_aggregator_test
+                    }
             }
             deploymentNode "Database Server" "" "Ubuntu 18.04 LTS"   {
                 deploymentNode "Relational DB server" "" "Oracle 19.1.0" {
@@ -237,7 +241,7 @@ workspace "Examination System" "" {
         container S "C2" {
             include *
             exclude "selenium_test"
-            exclude "junit_test"
+            exclude "junit_manager_test"
             exclude "apache_jmeter_test"
             exclude "toad_oracle"
             exclude "oracle_enterprise_manager"
