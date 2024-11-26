@@ -14,7 +14,7 @@ workspace "Examination System" "" {
                     term_repo = component "Exam Terms Repository" "Provides access to the underlying exam terms database."
                 }
             }
-            
+
             result_manager = container "Result Manager" "Manages course credits and exam results." {
 
                 group "API Layer" {
@@ -247,6 +247,7 @@ workspace "Examination System" "" {
             exclude "oracle_enterprise_manager"
             exclude "oracle_sql_developer"
             exclude "oracle_rman"
+            exclude "junit_aggregator_test"
         }
 
         component stats_manager "C3_statistics" {
@@ -383,7 +384,7 @@ workspace "Examination System" "" {
             result_notifier -> system_notifications "Sends notification to affected students"
             result_processor -> result_interface "Confirms the update"
             result_interface -> exams_web_app "Displays confirmation to the teacher"
-            
+
         }
 
         deployment S "Live" "Live_Deployment"   {
