@@ -56,6 +56,7 @@ Při vytváření zkoušky potřebuji zarezervovat místnost konání, aby stude
 
 - získání seznamu předmětů, ze společné databáze celkového systému, na základě ID učitele
 - poskytnout učiteli možnost výběru
+- container: Exam Web App -> Terms Manager -> Enrollment System
 
 ##### Responsibillity: Kontrola zadaných informací [5]
 
@@ -67,12 +68,14 @@ Při vytváření zkoušky potřebuji zarezervovat místnost konání, aby stude
 - kontrola volné místnosti na základu zadané místnosti a termínu v databázi systému
   - v případě chyby informovat uživatele a poskytnout možnost výběru nového termínu
 - zajištění kolizí, pokud dva učitelé vypisují zkoušku najednou do stejné místnosti
+- container: Exam Terms Manager -> Exam Scheduler
 
 ##### Responsibillity: Zadání zkoušky do databáze [7]
 
 - tabulka: "Vytvoření a editace termínu", "Uložení termínu do databáze", "Uložení změn termínu do databáze"
 
 - systém ve správném formátu odešle do databáze záznam o vytvoření zkoušky
+- container: Exam Terms Manager -> Exam Term Repo
 
 ##### Responsibillity: Notifikace studentům [8]
 
@@ -80,16 +83,9 @@ Při vytváření zkoušky potřebuji zarezervovat místnost konání, aby stude
 
 - vygeneruje zprávu o vytvoření zkoušky
 - mail se odešle pouze studentům, kteří jsou přihlášení na daném předmětu a mají povoleno zasílání zpráv
+- Exam Terms Manager -> Notification Coordinator
 
 <!-- Continue with ### sections for all other features. -->
-
-##### Responsibillity: Notifikace studentům [8]
-
-- tabulka: "Odeslání notifikací"
-
-- vygeneruje zprávu o vytvoření zkoušky
-- mail se odešle pouze studentům, kteří jsou přihlášení na daném předmětu a mají povoleno zasílání zpráv
-
 <!-- A ### section for each feature -->
 
 ### Feature: Zapsání se na zkoušku
@@ -120,6 +116,7 @@ Jako student se potřebuji zapsat na termín zkoušky, protože chci daný před
 
 - získání seznamu předmětů, ze společné databáze celkového systému, na základě ID studenta
 - poskytnout studentovi možnost výběru
+- Exam Web App -> Exam Terms Manager -> Enrollment System
 
 ##### Responsibillity: Kontrola zadaných informací [5]
 
@@ -130,12 +127,15 @@ Jako student se potřebuji zapsat na termín zkoušky, protože chci daný před
 - ověření vyplnění všech údajů
 - kontrola volné kapacity
   - v případě chyby informovat uživatele a poskytnout možnost výběru nového termínu
+- Exam Terms Manager -> Exam Terms Controller -> Exam Scheduler
 
 ##### Responsibillity: Zadání zapsaného studenta do databáze [7]
 
 - tabulka: "Uložení zápis studenta na zkoušku"
 
 - systém ve správném formátu odešle do databáze záznam o zapsání na zkoušky
+
+- Exam Terms Manager -> Exam Terms Repo
 
 <!-- Continue with ### sections for all other features. -->
 
@@ -170,11 +170,14 @@ Jako učitel potřebuji možnost vybrat ze seznamu studenty a udělit nebo odebr
 
 - získání seznamu předmětů, ze společné databáze celkového systému, na základě ID učitele
 - poskytnout učiteli možnost výběru
+- Exam Web Application -> Exam Terms Manager -> Enrollment System
 
 ##### Responsibility: Zobrazení seznamu studentů zapsaných na předmět [3]
 
 - získání seznamu studentů, ze společné databáze celkového systému, na základě ID předmětu a učitele (v případě, že student není garantem předmětu, vidí pouze studenty ze svých rozvrhových lístků)
 - poskytnout učiteli možnost výběru studentů ze seznamu
+- Exam Terms Manager -> Enrollment System
+- Result Manager -> Retriever & Processor & Repo
 
 ##### Responsibillity: Kontrola zadaných informací [6]
 
@@ -182,9 +185,13 @@ Jako učitel potřebuji možnost vybrat ze seznamu studenty a udělit nebo odebr
 
 - ověření, jestli daný student už má zápočet a jestli mu ho lze udělit
 
+- Results Manager -> Result Repo & Processor & Retriever
+
 ##### Responsibillity: Zobrazit shrnutí informací a případné chyby [6]
 
 - dialogové okno se shrnutím akce
+
+- Result Manager
 
 ##### Responsibillity: Uložení zápočtu do databáze [8]
 
@@ -192,11 +199,14 @@ Jako učitel potřebuji možnost vybrat ze seznamu studenty a udělit nebo odebr
 
 - systém ve správném formátu odešle do databáze záznam o udělení nebo odebrání zápočtu
 
+- Resutl Manager -> Result Repository
+
 ##### Responsibillity: Notifikace studentům [10]
 
 - tabulka: "Odeslání notifikací"
 - vygeneruje zprávu o udělení či odebrání zápočtu
 - mail se odešle pouze studentům, kterých se akce týká a mají povoleno zasílání zpráv
+- Result Manager -> Notification Coordinator
 
 ### Feature: Zobrazení výsledků
 
@@ -217,11 +227,15 @@ Takto se dozvím, zda škole věnuji dostatečně času a jestli zvládám plně
 
 - získat ze společné databáze informace o všech zkouškách, které daný student skládal.
 
+- Results Manager -> Result Repo & Processor & Retriever
+
 ##### Zobrazení získaných zápočtů [2]
 
 - tabulka: "Zobrazit své výsledky (napříč předměty)"
 
 - získat ze společné databáze informace o všech zápočtech, které daný student získal.
+
+- Results Manager -> Result Repo & Processor & Retriever
 
 ### Feature: Udělování výsledků (známek)
 
@@ -255,10 +269,13 @@ Jako učitel potřebuju zobrazit a zapsat výsledky jednotlivých zkoušek, aby 
 2. – 8. Pristup k databazi, vytvoreni cache, modelu z cache a jeho vizualizace. Synchronizace s databazi, kontrola persistence zmen v databazi.
 3. Napojeni API zprostredkovavajici odesilani emailu pomoci toolu 3 strany?
 
+- Results Manager -> Result Repo & Processor & Retriever& Notification Coordinator
+
 ##### Responsibillity: Zobrazení vyučovaných předmětů [2]
 
 - získání seznamu předmětů, ze společné databáze celkového systému, na základě ID učitele
 - poskytnout učiteli možnost výběru
+- Exam Terms Manager -> Exam Terms Interface -> Enrollment System
 
 ##### Responsibillity: Zobrazení zkoušek pro daný předmět [4]
 
@@ -267,15 +284,21 @@ Jako učitel potřebuju zobrazit a zapsat výsledky jednotlivých zkoušek, aby 
 - získání seznamu zkoušek, ze společné databáze celkového systému, na základě ID učitele a předmětu
 - poskytnout učiteli možnost výběru
 
-##### Responsibillity: Zadání zkoušky do databáze [8]
+- Exam Terms Manager -> Exam Terms Interface -> Enrollment System
+- Result Manager -> Retriever & Processor & Repo
+
+##### Responsibillity: Zadání výsledků zkoušky do databáze [8]
 
 - systém ve správném formátu odešle do databáze změny
+- Exam Terms Manager -> Exam Terms Repo
 
 ##### Responsibillity: Notifikace studentům [9]
 
 - tabulka: "Sestavení notifikace studentům o zápočtu", "Odeslání notifikací"
 
 - každému studentovi, u kterého byl změněn výsledek se odešle email s detaily změny, obsahující například zkoušku, předmět, předchozí výsledek a nový výsledek
+
+- Result Manager -> Notification Coordinator
 
 ### Feature: Zobrazení statistik
 
@@ -302,8 +325,12 @@ Jako manažer si chci zobrazit historické záznamy výsledků zkoušek, abych b
 
 - získání dat z databází ostatních modulů a jejich agragace podle předmětu/vyučujícího/semestru
 
+- Result Aggregator
+
 ##### Responsibility: Zpracování a výpis zpracovaných dat [11]
 
 - výpočet průměrných hodnocení přes zvolené položky
 - zobrazení do tabulek
 - stažení dat pro další zpracování
+- Result Aggregator -> Task Manager
+- Exam Web App
